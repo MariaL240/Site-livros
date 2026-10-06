@@ -1,13 +1,9 @@
-```css
-:root {
-    --branco: #ffffff;
-    --rosa-claro: #fff0f6;
-    --rosa: #e88aaa;
-    --rosa-escuro: #c95f82;
-    --rosa-borda: #e59ab3;
-    --texto: #573743;
-    --sombra: #d99caf;
-    --fonte: Arial, sans-serif;
+]:root {
+    --rosa-claro: #ffe9ef;
+    --rosa: #f65b9d;
+    --rosa-escuro: #e84d8d;
+    --branco: #fffafa;
+    --preto: #222222;
 }
 
 * {
@@ -17,198 +13,168 @@
 
 body {
     margin: 0;
-    color: var(--texto);
     background-color: var(--rosa-claro);
-    font-family: var(--fonte);
+    color: var(--preto);
+    font-family: Georgia, 'Times New Roman', serif;
 }
+
+/* TOPO */
 
 .cabecalho {
     background-color: var(--rosa);
-    color: var(--branco);
-    text-align: center;
-    padding: 28px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cabecalho h1 {
+    font-size: 25px;
+    font-weight: bold;
     margin: 0;
-    font-size: 32px;
 }
 
-.cabecalho p {
-    font-size: 18px;
-}
+/* CONTEUDO */
 
 .conteudo {
     max-width: 900px;
-    min-height: 650px;
-    margin: 0 auto;
-    padding: 50px 20px;
+    margin: 16px auto;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
 }
+
+/* CARDS */
+
+.questionario,
+.livro-sugerido {
+    background-color: var(--branco);
+    width: 45%;
+    min-height: 195px;
+    border-radius: 20px;
+    padding: 8px 15px 20px;
+    text-align: center;
+}
+
+.questionario h2,
+.livro-sugerido h2 {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+/* INÍCIO */
 
 .inicio {
-    background-color: var(--branco);
-    border: 2px solid var(--rosa-borda);
-    border-radius: 15px;
-    padding: 50px;
-    text-align: center;
-    box-shadow: 0 4px 10px var(--sombra);
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.inicio h2 {
-    font-size: 30px;
-    color: var(--rosa-escuro);
-}
-
-.inicio p {
-    font-size: 19px;
-    margin-bottom: 35px;
-}
-
-.botao {
-    background-color: var(--rosa-escuro);
-    color: var(--branco);
-    border: none;
-    border-radius: 8px;
-    padding: 14px 25px;
-    font-size: 17px;
-    cursor: pointer;
-}
-
-.botao:hover {
+#iniciar,
+.sortear {
     background-color: var(--rosa);
+    color: black;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 30px;
+    cursor: pointer;
+    font-size: 14px;
 }
+
+#iniciar:hover,
+.sortear:hover {
+    background-color: var(--rosa-escuro);
+}
+
+/* QUIZ */
 
 .quiz {
     display: none;
-    background-color: var(--branco);
-    border: 2px solid var(--rosa-borda);
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 4px 10px var(--sombra);
+    text-align: left;
+    font-family: Arial, sans-serif;
 }
 
-.pergunta {
-    text-align: center;
+.quiz h3 {
+    font-size: 14px;
+    margin: 20px 0;
 }
 
-.pergunta h2 {
-    color: var(--rosa-escuro);
-}
-
-.pergunta h3 {
-    font-size: 24px;
-    margin: 30px 0;
-}
-
-.alternativas {
+.respostas {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
 }
 
-.alternativa {
-    background-color: var(--rosa-claro);
-    color: var(--texto);
-    border: 2px solid var(--rosa-borda);
-    border-radius: 8px;
-    padding: 18px;
-    font-size: 17px;
+.resposta {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    padding: 5px;
     cursor: pointer;
 }
 
-.alternativa:hover {
-    background-color: var(--rosa);
-    color: var(--branco);
-}
-
-.resultado {
-    display: none;
-    background-color: var(--branco);
-    border: 2px solid var(--rosa-borda);
-    border-radius: 15px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 4px 10px var(--sombra);
-}
-
-.resultado h2 {
+.resposta:hover {
     color: var(--rosa-escuro);
 }
 
-#perfil {
-    font-size: 28px;
-}
-
-#descricao-perfil {
-    font-size: 18px;
-    line-height: 1.5;
-}
+/* LIVRO */
 
 .livro {
-    display: none;
-    background-color: var(--rosa-claro);
-    border: 2px solid var(--rosa-borda);
-    border-radius: 12px;
-    margin: 30px auto;
-    padding: 25px;
-    max-width: 600px;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 25px;
-    text-align: left;
+    justify-content: center;
 }
 
 .livro img {
-    width: 160px;
-    height: 230px;
+    width: 80px;
+    height: 115px;
     object-fit: cover;
-    border-radius: 5px;
 }
 
 #nome-livro {
-    color: var(--rosa-escuro);
-    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin: 8px 0 2px;
 }
 
 #autor-livro {
-    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    margin: 0;
 }
 
-#descricao-livro {
-    line-height: 1.5;
+.sortear {
+    display: none;
+    margin: 5px auto;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    padding: 8px 15px;
 }
 
-.voltar {
-    margin-top: 15px;
-}
+/* RODAPÉ */
 
 .rodape {
+    height: 24px;
     background-color: var(--rosa);
-    color: var(--branco);
-    text-align: center;
-    padding: 20px;
+    margin-top: 16px;
 }
 
-@media screen and (max-width: 600px) {
+/* CELULAR */
 
-    .inicio,
-    .quiz,
-    .resultado {
-        padding: 30px 20px;
-    }
+@media screen and (max-width: 650px) {
 
-    .cabecalho h1 {
-        font-size: 26px;
-    }
-
-    .livro {
+    .conteudo {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
 
-    .livro img {
-        width: 140px;
-        height: 200px;
+    .questionario,
+    .livro-sugerido {
+        width: 85%;
     }
 }
-```
-
