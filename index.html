@@ -1,1 +1,69 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra seu estilo de leitura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header class="cabecalho">
+        <h1>📚 Meu Estilo de Leitura</h1>
+        <p>Descubra qual tipo de leitor combina com você!</p>
+    </header>
+
+    <main class="conteudo">
+
+        <section class="inicio" id="inicio">
+            <h2>Qual leitor você é?</h2>
+            <p>Responda cinco perguntas e descubra seu estilo de leitura.</p>
+            <button class="botao" id="comecar">Começar o quiz</button>
+        </section>
+
+        <section class="quiz" id="quiz">
+
+            <div class="pergunta">
+                <h2 id="numero-pergunta">Pergunta 1</h2>
+                <h3 id="texto-pergunta"></h3>
+
+                <div class="alternativas">
+                    <button class="alternativa"></button>
+                    <button class="alternativa"></button>
+                    <button class="alternativa"></button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="resultado" id="resultado">
+            <h2>Seu estilo de leitor é...</h2>
+
+            <h3 id="perfil"></h3>
+            <p id="descricao-perfil"></p>
+
+            <button class="botao" id="sortear">Sortear meu livro 🎲</button>
+
+            <div class="livro" id="livro">
+                <img id="capa-livro" src="" alt="Capa do livro">
+                <div>
+                    <h3 id="nome-livro"></h3>
+                    <p id="autor-livro"></p>
+                    <p id="descricao-livro"></p>
+                </div>
+            </div>
+
+            <button class="botao voltar" id="novo-quiz">Fazer o quiz novamente</button>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Feito com carinho para quem ama livros 💗</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+```
