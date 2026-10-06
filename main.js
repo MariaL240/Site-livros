@@ -97,19 +97,19 @@ const perfis = [
             {
                 nome: 'Divine Rivals',
                 autor: 'Rebecca Ross',
-                capa: 'livro1.jpg'
+                capa: 'book1.jpg'
             },
 
             {
                 nome: 'Powerless',
                 autor: 'Lauren Roberts',
-                capa: 'livro2.jpg'
+                capa: 'book2.jpg'
             },
 
             {
                 nome: 'Better Than the Movies',
                 autor: 'Lynn Painter',
-                capa: 'livro3.jpg'
+                capa: 'book3.jpg'
             }
 
         ]
@@ -127,19 +127,19 @@ const perfis = [
             {
                 nome: 'Powerless',
                 autor: 'Lauren Roberts',
-                capa: 'livro4.jpg'
+                capa: 'livro5.jpg'
             },
 
             {
                 nome: 'A Rainha Vermelha',
                 autor: 'Victoria Aveyard',
-                capa: 'livro5.jpg'
+                capa: 'book4.jpg'
             },
 
             {
                 nome: 'Once Upon a Broken Heart',
                 autor: 'Stephanie Garber',
-                capa: 'livro6.jpg'
+                capa: 'book5.jpg'
             }
 
         ]
@@ -157,19 +157,19 @@ const perfis = [
             {
                 nome: 'The Inheritance Games',
                 autor: 'Jennifer Lynn Barnes',
-                capa: 'livro7.jpg'
+                capa: 'book6.jpg'
             },
 
             {
                 nome: 'A Good Girl’s Guide to Murder',
                 autor: 'Holly Jackson',
-                capa: 'livro8.jpg'
+                capa: 'book7.jpg'
             },
 
             {
                 nome: 'The Reappearance of Rachel Price',
                 autor: 'Holly Jackson',
-                capa: 'livro9.jpg'
+                capa: 'book8.jpg'
             }
 
         ]
