@@ -1,4 +1,4 @@
-]:root {
+:root {
     --rosa-claro: #ffe9ef;
     --rosa: #f65b9d;
     --rosa-escuro: #e84d8d;
@@ -18,11 +18,14 @@ body {
     font-family: Georgia, 'Times New Roman', serif;
 }
 
-/* TOPO */
+
+/* CABEÇALHO */
 
 .cabecalho {
     background-color: var(--rosa);
+
     height: 50px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,150 +34,290 @@ body {
 .cabecalho h1 {
     font-size: 25px;
     font-weight: bold;
+
     margin: 0;
 }
 
-/* CONTEUDO */
+
+/* CONTEÚDO */
 
 .conteudo {
     max-width: 900px;
+
     margin: 16px auto;
+
     display: flex;
     justify-content: center;
+
     gap: 14px;
 }
+
 
 /* CARDS */
 
 .questionario,
 .livro-sugerido {
+
     background-color: var(--branco);
+
     width: 45%;
+
     min-height: 195px;
+
     border-radius: 20px;
+
     padding: 8px 15px 20px;
+
     text-align: center;
 }
 
 .questionario h2,
 .livro-sugerido h2 {
+
     font-family: Arial, sans-serif;
+
     font-size: 14px;
+
     margin: 0 0 15px;
 }
 
-/* INÍCIO */
+
+/* TELA INICIAL */
 
 .inicio {
+
     height: 130px;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
 }
 
-#iniciar,
-.sortear {
+
+#iniciar {
+
     background-color: var(--rosa);
+
     color: black;
+
     border: none;
+
     border-radius: 12px;
+
     padding: 13px 30px;
+
     cursor: pointer;
+
     font-size: 14px;
 }
 
-#iniciar:hover,
-.sortear:hover {
+
+#iniciar:hover {
+
     background-color: var(--rosa-escuro);
 }
+
 
 /* QUIZ */
 
 .quiz {
+
     display: none;
+
     text-align: left;
+
     font-family: Arial, sans-serif;
 }
 
+
 .quiz h3 {
+
     font-size: 14px;
+
     margin: 20px 0;
 }
 
+
 .respostas {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
 }
 
+
 .resposta {
+
     background-color: transparent;
+
     border: none;
+
     text-align: left;
+
     font-size: 14px;
+
     padding: 5px;
+
     cursor: pointer;
 }
 
+
 .resposta:hover {
+
     color: var(--rosa-escuro);
 }
+
+
+/* RESULTADO */
+
+.resultado {
+
+    display: none;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    padding: 15px;
+}
+
+
+.resultado h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+.resultado h2 {
+
+    color: var(--rosa-escuro);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin: 10px 0;
+}
+
+
+.resultado p {
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
 
 /* LIVRO */
 
 .livro {
+
     min-height: 130px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 }
 
+
 .livro img {
+
     width: 80px;
+
     height: 115px;
+
     object-fit: cover;
 }
 
+
 #nome-livro {
+
     font-family: Arial, sans-serif;
+
     font-size: 13px;
+
     margin: 8px 0 2px;
 }
 
+
 #autor-livro {
+
     font-family: Arial, sans-serif;
+
     font-size: 11px;
+
     margin: 0;
 }
 
+
+/* BOTÃO SORTEAR */
+
 .sortear {
+
     display: none;
+
     margin: 5px auto;
+
     font-family: Arial, sans-serif;
+
     font-size: 11px;
+
     padding: 8px 15px;
+
+    background-color: var(--rosa);
+
+    color: black;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
 }
+
+
+.sortear:hover {
+
+    background-color: var(--rosa-escuro);
+}
+
 
 /* RODAPÉ */
 
 .rodape {
+
     height: 24px;
+
     background-color: var(--rosa);
+
     margin-top: 16px;
 }
+
 
 /* CELULAR */
 
 @media screen and (max-width: 650px) {
 
     .conteudo {
+
         flex-direction: column;
+
         align-items: center;
     }
 
     .questionario,
     .livro-sugerido {
+
         width: 85%;
     }
+
 }
