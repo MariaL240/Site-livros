@@ -36,7 +36,6 @@ const perguntas = [
 
     {
         pergunta: 'Qual história você escolheria?',
-
         respostas: [
             'Uma história de amor',
             'Uma aventura fantástica',
@@ -44,10 +43,8 @@ const perguntas = [
         ]
     },
 
-
     {
         pergunta: 'O que mais chama sua atenção em um livro?',
-
         respostas: [
             'Os sentimentos dos personagens',
             'Os lugares e aventuras',
@@ -55,32 +52,26 @@ const perguntas = [
         ]
     },
 
-
     {
         pergunta: 'Qual cenário você escolheria?',
-
         respostas: [
-            'Uma cidade romântica',
+            'Uma história cheia de romance',
             'Um mundo mágico',
-            'Uma casa cheia de mistérios'
+            'Uma cidade cheia de mistérios'
         ]
     },
-
 
     {
         pergunta: 'Qual personagem você seria?',
-
         respostas: [
             'Uma pessoa apaixonada',
             'Um grande aventureiro',
-            'Um detetive'
+            'Um investigador'
         ]
     },
 
-
     {
         pergunta: 'Como você gosta de terminar um livro?',
-
         respostas: [
             'Com o coração quentinho',
             'Com vontade de viver uma aventura',
@@ -91,7 +82,7 @@ const perguntas = [
 ];
 
 
-/* PERFIS */
+/* PERFIS E LIVROS */
 
 const perfis = [
 
@@ -99,33 +90,25 @@ const perfis = [
         nome: 'Leitor Romântico',
 
         descricao:
-        'Você gosta de histórias cheias de sentimentos, emoções e romances.',
+        'Você gosta de histórias cheias de sentimentos, relações e aquele romance que prende até a última página.',
 
         livros: [
 
             {
-                nome: 'É Assim que Acaba',
-
-                autor: 'Colleen Hoover',
-
+                nome: 'Divine Rivals',
+                autor: 'Rebecca Ross',
                 capa: 'livro1.jpg'
             },
 
-
             {
-                nome: 'Orgulho e Preconceito',
-
-                autor: 'Jane Austen',
-
+                nome: 'Powerless',
+                autor: 'Lauren Roberts',
                 capa: 'livro2.jpg'
             },
 
-
             {
-                nome: 'A Culpa é das Estrelas',
-
-                autor: 'John Green',
-
+                nome: 'Better Than the Movies',
+                autor: 'Lynn Painter',
                 capa: 'livro3.jpg'
             }
 
@@ -137,33 +120,25 @@ const perfis = [
         nome: 'Leitor Aventureiro',
 
         descricao:
-        'Você gosta de aventuras, descobertas e histórias que levam sua imaginação para outros mundos.',
+        'Sua imaginação gosta de viajar! Você prefere mundos fantásticos, aventuras e personagens que enfrentam grandes desafios.',
 
         livros: [
 
             {
-                nome: 'Harry Potter',
-
-                autor: 'J. K. Rowling',
-
+                nome: 'Powerless',
+                autor: 'Lauren Roberts',
                 capa: 'livro4.jpg'
             },
 
-
             {
-                nome: 'O Hobbit',
-
-                autor: 'J. R. R. Tolkien',
-
+                nome: 'A Rainha Vermelha',
+                autor: 'Victoria Aveyard',
                 capa: 'livro5.jpg'
             },
 
-
             {
-                nome: 'Percy Jackson',
-
-                autor: 'Rick Riordan',
-
+                nome: 'Once Upon a Broken Heart',
+                autor: 'Stephanie Garber',
                 capa: 'livro6.jpg'
             }
 
@@ -175,33 +150,25 @@ const perfis = [
         nome: 'Leitor Misterioso',
 
         descricao:
-        'Você gosta de mistérios, pistas e histórias que fazem você tentar descobrir o final.',
+        'Você gosta de pistas, segredos e reviravoltas. Quanto mais difícil for descobrir o final, melhor.',
 
         livros: [
 
             {
-                nome: 'Sherlock Holmes',
-
-                autor: 'Arthur Conan Doyle',
-
+                nome: 'The Inheritance Games',
+                autor: 'Jennifer Lynn Barnes',
                 capa: 'livro7.jpg'
             },
 
-
             {
-                nome: 'O Assassinato no Expresso do Oriente',
-
-                autor: 'Agatha Christie',
-
+                nome: 'A Good Girl’s Guide to Murder',
+                autor: 'Holly Jackson',
                 capa: 'livro8.jpg'
             },
 
-
             {
-                nome: 'Coraline',
-
-                autor: 'Neil Gaiman',
-
+                nome: 'The Reappearance of Rachel Price',
+                autor: 'Holly Jackson',
                 capa: 'livro9.jpg'
             }
 
@@ -211,7 +178,7 @@ const perfis = [
 ];
 
 
-/* COMEÇAR O QUIZ */
+/* COMEÇAR */
 
 botaoIniciar.onclick = function() {
 
@@ -348,7 +315,7 @@ function sortearLivro() {
 }
 
 
-/* CLICAR NO BOTÃO DE SORTEAR */
+/* SORTEAR NOVAMENTE */
 
 botaoSortear.onclick = function() {
 
