@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Destino literário</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,43 +16,91 @@
         <h1>Destino literário</h1>
     </header>
 
+
     <main class="conteudo">
 
+        <!-- QUESTIONÁRIO -->
+
         <section class="questionario">
+
             <h2>Questionário</h2>
 
+            <!-- Tela inicial -->
             <div class="inicio" id="inicio">
-                <button id="iniciar">INICIAR</button>
+
+                <button id="iniciar">
+                    INICIAR
+                </button>
+
             </div>
+
+
+            <!-- Perguntas -->
 
             <div class="quiz" id="quiz">
 
-                <h3 id="numero-pergunta">1. Pergunta...</h3>
+                <h3 id="numero-pergunta">
+                    1. Pergunta...
+                </h3>
 
                 <div class="respostas">
+
                     <button class="resposta"></button>
+
                     <button class="resposta"></button>
+
                     <button class="resposta"></button>
+
                 </div>
+
+            </div>
+
+
+            <!-- Resultado -->
+
+            <div class="resultado" id="resultado">
+
+                <h3>
+                    Seu perfil é:
+                </h3>
+
+                <h2 id="perfil"></h2>
+
+                <p id="descricao-perfil"></p>
 
             </div>
 
         </section>
 
+
+        <!-- LIVRO SUGERIDO -->
+
         <section class="livro-sugerido">
 
-            <h2>Livro sugerido</h2>
+            <h2>
+                Livro sugerido
+            </h2>
+
 
             <div class="livro" id="livro">
 
-                <img id="capa-livro" src="livro1.jpg" alt="Capa do livro">
+                <img
+                    id="capa-livro"
+                    src="livro1.jpg"
+                    alt="Capa do livro"
+                >
 
                 <h3 id="nome-livro"></h3>
+
                 <p id="autor-livro"></p>
 
             </div>
 
-            <button class="sortear" id="sortear">
+
+            <button
+                class="sortear"
+                id="sortear"
+            >
                 SORTEAR LIVRO
             </button>
 
@@ -57,9 +108,12 @@
 
     </main>
 
+
     <footer class="rodape"></footer>
+
 
     <script src="main.js"></script>
 
 </body>
+
 </html>
