@@ -1,16 +1,28 @@
-const botaoIniciar = document.querySelector('#iniciar');
+const botaoIniciar = document.getElementById("iniciar");
 
-const inicio = document.querySelector('#inicio'); const quiz = document.querySelector('#quiz'); const resultado = document.querySelector('#resultado');
+const inicio = document.getElementById("inicio");
 
-const perfil = document.querySelector('#perfil'); const descricaoPerfil = document.querySelector('#descricao-perfil');
+const quiz = document.getElementById("quiz");
 
-const numeroPergunta = document.querySelector('#numero-pergunta');
+const resultado = document.getElementById("resultado");
 
-const respostas = document.querySelectorAll('.resposta');
+const numeroPergunta = document.getElementById("numero-pergunta");
 
-const capaLivro = document.querySelector('#capa-livro'); const nomeLivro = document.querySelector('#nome-livro'); const autorLivro = document.querySelector('#autor-livro');
+const perfil = document.getElementById("perfil");
 
-const botaoSortear = document.querySelector('#sortear');
+const descricaoPerfil = document.getElementById("descricao-perfil");
+
+const respostas = document.querySelectorAll(".resposta");
+
+const capaLivro = document.getElementById("capa-livro");
+
+const nomeLivro = document.getElementById("nome-livro");
+
+const autorLivro = document.getElementById("autor-livro");
+
+const botaoSortear = document.getElementById("sortear");
+
+/* ========================= VARIÁVEIS ========================= */
 
 let perguntaAtual = 0;
 
@@ -22,127 +34,149 @@ let perfilAtual = 0;
 
 const perguntas = [
 
-{ pergunta: 'Qual história você escolheria?', respostas: [ 'Uma história de amor', 'Uma aventura fantástica', 'Um grande mistério' ] },
+{ pergunta: "Qual história você escolheria?",
 
-{ pergunta: 'O que mais chama sua atenção em um livro?', respostas: [ 'Os sentimentos dos personagens', 'Os lugares e aventuras', 'Os segredos da história' ] },
+respostas: [ "Uma história de amor", "Uma aventura fantástica", "Um grande mistério" ] },
 
-{ pergunta: 'Qual cenário você escolheria?', respostas: [ 'Uma história cheia de romance', 'Um mundo mágico', 'Uma cidade cheia de mistérios' ] },
+{ pergunta: "O que mais chama sua atenção em um livro?",
 
-{ pergunta: 'Qual personagem você seria?', respostas: [ 'Uma pessoa apaixonada', 'Um grande aventureiro', 'Um investigador' ] },
+respostas: [ "Os sentimentos dos personagens", "Os lugares e aventuras", "Os segredos da história" ] },
 
-{ pergunta: 'Como você gosta de terminar um livro?', respostas: [ 'Com o coração quentinho', 'Com vontade de viver uma aventura', 'Surpreso com a descoberta' ] }
+{ pergunta: "Qual cenário você escolheria?",
+
+respostas: [ "Uma história cheia de romance", "Um mundo mágico", "Uma cidade cheia de mistérios" ] },
+
+{ pergunta: "Qual personagem você seria?",
+
+respostas: [ "Uma pessoa apaixonada", "Um grande aventureiro", "Um investigador" ] },
+
+{ pergunta: "Como você gosta de terminar um livro?",
+
+respostas: [ "Com o coração quentinho", "Com vontade de viver uma aventura", "Surpreso com a descoberta" ] }
 
 ];
 
-/* ========================= PERFIS ========================= */
+/* ========================= PERFIS E LIVROS ========================= */
 
 const perfis = [
 
-{ nome: 'Leitor Romântico',
+{ nome: "Leitor Romântico",
 
-descricao: 'Você gosta de histórias cheias de sentimentos, relações e aquele romance que prende até a última página.',
+descricao: "Você gosta de histórias cheias de sentimentos, relações e aquele romance que prende até a última página.",
 
-livros: [ { nome: 'Divinos Rivais', autor: 'Rebecca Ross', capa: 'book1.jpg' },
+livros: [
 
-{ nome: 'Powerless', autor: 'Lauren Roberts', capa: 'book2.jpg' },
+{ nome: "Divinos Rivais", autor: "Rebecca Ross", capa: "book1.jpg" },
 
-{ nome: 'Melhor do que nos filmes', autor: 'Lynn Painter', capa: 'book3.jpg' } ] },
+{ nome: "Powerless", autor: "Lauren Roberts", capa: "book2.jpg" },
 
-{ nome: 'Leitor Aventureiro',
+{ nome: "Melhor do que nos filmes", autor: "Lynn Painter", capa: "book3.jpg" }
 
-descricao: 'Sua imaginação gosta de viajar! Você prefere mundos fantásticos, aventuras e personagens que enfrentam grandes desafios.',
+] },
 
-livros: [ { nome: 'Powerless', autor: 'Lauren Roberts', capa: 'livro5.jpg' },
+{ nome: "Leitor Aventureiro",
 
-{ nome: 'A Rainha Vermelha', autor: 'Victoria Aveyard', capa: 'book4.jpg' },
+descricao: "Sua imaginação gosta de viajar! Você prefere mundos fantásticos, aventuras e personagens que enfrentam grandes desafios.",
 
-{ nome: 'Era uma vez um coração partido', autor: 'Stephanie Garber', capa: 'book5.jpg' } ] },
+livros: [
 
-{ nome: 'Leitor Misterioso',
+{ nome: "Powerless", autor: "Lauren Roberts", capa: "livro5.jpg" },
 
-descricao: 'Você gosta de pistas, segredos e reviravoltas. Quanto mais difícil for descobrir o final, melhor.',
+{ nome: "A Rainha Vermelha", autor: "Victoria Aveyard", capa: "book4.jpg" },
 
-livros: [ { nome: 'Jogos de Herança', autor: 'Jennifer Lynn Barnes', capa: 'book6.jpg' },
+{ nome: "Era uma vez um coração partido", autor: "Stephanie Garber", capa: "book5.jpg" }
 
-{ nome: 'Manual de assassinato para boas garotas', autor: 'Holly Jackson', capa: 'book7.jpg' },
+] },
 
-{ nome: 'O reaparecimento de Rachel Price', autor: 'Holly Jackson', capa: 'book8.jpg' } ] }
+{ nome: "Leitor Misterioso",
+
+descricao: "Você gosta de pistas, segredos e reviravoltas. Quanto mais difícil for descobrir o final, melhor.",
+
+livros: [
+
+{ nome: "Jogos de Herança", autor: "Jennifer Lynn Barnes", capa: "book6.jpg" },
+
+{ nome: "Manual de assassinato para boas garotas", autor: "Holly Jackson", capa: "book7.jpg" },
+
+{ nome: "O reaparecimento de Rachel Price", autor: "Holly Jackson", capa: "book8.jpg" }
+
+] }
 
 ];
 
-/* ========================= INICIAR QUIZ ========================= */
+/* ========================= MOSTRAR PERGUNTA ========================= */
 
-botaoIniciar.onclick = function () {
+function mostrarPergunta() {
 
-inicio.style.display = 'none';
+const pergunta = perguntas[perguntaAtual];
 
-quiz.style.display = 'block';
+numeroPergunta.textContent = (perguntaAtual + 1) + ". " + pergunta.pergunta;
 
-resultado.style.display = 'none';
+for (let i = 0; i < respostas.length; i++) {
+
+respostas[i].textContent = String.fromCharCode(65 + i) + ". " + pergunta.respostas[i];
+
+} }
+
+/* ========================= INICIAR ========================= */
+
+botaoIniciar.addEventListener("click", function () {
 
 perguntaAtual = 0;
 
 pontos = [0, 0, 0];
 
-mostraPergunta();
+inicio.style.display = "none";
 
-};
+quiz.style.display = "block";
 
-/* ========================= MOSTRAR PERGUNTA ========================= */
+resultado.style.display = "none";
 
-function mostraPergunta() {
+mostrarPergunta();
 
-numeroPergunta.textContent = (perguntaAtual + 1) + '. ' + perguntas[perguntaAtual].pergunta;
-
-for (let i = 0; i < respostas.length; i++) {
-
-respostas[i].textContent = String.fromCharCode(65 + i) + '. ' + perguntas[perguntaAtual].respostas[i];
-
-}
-
-}
+});
 
 /* ========================= RESPONDER ========================= */
 
-for (let i = 0; i < respostas.length; i++) {
+respostas.forEach(function (botao, indice) {
 
-respostas[i].onclick = function () {
+botao.addEventListener("click", function () {
 
-pontos[i]++;
+pontos[indice]++;
 
 perguntaAtual++;
 
 if (perguntaAtual < perguntas.length) {
 
-mostraPergunta();
+mostrarPergunta();
 
 } else {
 
-mostraResultado();
+mostrarResultado();
 
 }
 
-};
+});
 
-}
+});
 
 /* ========================= RESULTADO ========================= */
 
-function mostraResultado() {
+function mostrarResultado() {
 
 const maiorPontuacao = Math.max(...pontos);
 
 perfilAtual = pontos.indexOf(maiorPontuacao);
 
-quiz.style.display = 'none';
+quiz.style.display = "none";
 
-resultado.style.display = 'block';
+resultado.style.display = "block";
 
 perfil.textContent = perfis[perfilAtual].nome;
 
 descricaoPerfil.textContent = perfis[perfilAtual].descricao;
 
-botaoSortear.style.display = 'block';
+botaoSortear.style.display = "block";
 
 sortearLivro();
 
@@ -154,24 +188,24 @@ function sortearLivro() {
 
 const livros = perfis[perfilAtual].livros;
 
-const numeroAleatorio = Math.floor(Math.random() * livros.length);
+const numero = Math.floor(Math.random() * livros.length);
 
-const livroEscolhido = livros[numeroAleatorio];
+const livro = livros[numero];
 
-capaLivro.src = livroEscolhido.capa;
+capaLivro.src = livro.capa;
 
-capaLivro.alt = 'Capa de ' + livroEscolhido.nome;
+capaLivro.alt = "Capa de " + livro.nome;
 
-nomeLivro.textContent = livroEscolhido.nome;
+nomeLivro.textContent = livro.nome;
 
-autorLivro.textContent = livroEscolhido.autor;
+autorLivro.textContent = livro.autor;
 
 }
 
-/* ========================= SORTEAR NOVAMENTE ========================= */
+/* ========================= BOTÃO SORTEAR ========================= */
 
-botaoSortear.onclick = function () {
+botaoSortear.addEventListener("click", function () {
 
 sortearLivro();
 
-};
+});
