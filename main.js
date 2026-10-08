@@ -28,7 +28,7 @@ let pontos = [0, 0, 0];
 
 let perfilAtual = 0;
 
-/* PERGUNTAS */
+/* ========================= PERGUNTAS ========================= */
 
 const perguntas = [
 
@@ -44,7 +44,7 @@ const perguntas = [
 
 ];
 
-/* PERFIS E LIVROS */
+/* ========================= PERFIS E LIVROS ========================= */
 
 const perfis = [
 
@@ -92,9 +92,9 @@ livros: [
 
 ];
 
-/* COMEÇAR */
+/* ========================= COMEÇAR ========================= */
 
-botaoIniciar.onclick = function() {
+botaoIniciar.onclick = function () {
 
 inicio.style.display = 'none';
 
@@ -110,7 +110,7 @@ mostraPergunta();
 
 };
 
-/* MOSTRAR PERGUNTA */
+/* ========================= MOSTRAR PERGUNTA ========================= */
 
 function mostraPergunta() {
 
@@ -124,11 +124,11 @@ respostas[i].textContent = String.fromCharCode(65 + i) + '. ' + perguntas[pergun
 
 }
 
-/* ESCOLHER RESPOSTA */
+/* ========================= ESCOLHER RESPOSTA ========================= */
 
 for (let i = 0; i < respostas.length; i++) {
 
-respostas[i].onclick = function() {
+respostas[i].onclick = function () {
 
 pontos[i]++;
 
@@ -148,7 +148,7 @@ mostraResultado();
 
 }
 
-/* MOSTRAR RESULTADO */
+/* ========================= MOSTRAR RESULTADO ========================= */
 
 function mostraResultado() {
 
@@ -170,13 +170,13 @@ sortearLivro();
 
 }
 
-/* SORTEAR LIVRO */
+/* ========================= SORTEAR LIVRO ========================= */
 
 function sortearLivro() {
 
 let livros = perfis[perfilAtual].livros;
 
-let numeroAleatorio = Math.floor( Math.random() * livros.length );
+let numeroAleatorio = Math.floor(Math.random() * livros.length);
 
 let livroEscolhido = livros[numeroAleatorio];
 
@@ -190,9 +190,9 @@ autorLivro.textContent = livroEscolhido.autor;
 
 }
 
-/* SORTEAR NOVAMENTE */
+/* ========================= SORTEAR NOVAMENTE ========================= */
 
-botaoSortear.onclick = function() {
+botaoSortear.onclick = function () {
 
 sortearLivro();
 
