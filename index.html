@@ -1,101 +1,135 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> <html lang="pt-br">
 
-    <title>Destino literário</title>
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
-</head>
+<title>Destino Literário</title>
+
+<link rel="stylesheet" href="style.css"> </head>
 
 <body>
 
-    <header class="cabecalho">
-        <h1>Destino literário</h1>
-    </header>
+<header class="cabecalho"> <h1>Destino Literário</h1> </header>
 
+<main class="conteudo">
 
-    <main class="conteudo">
+<!-- INTRODUÇÃO DO SITE -->
 
-        <section class="questionario">
+<section class="introducao">
 
-            <h2>Questionário</h2>
+<h2>Bem-vindo ao Destino Literário!</h2>
 
-            <div class="inicio" id="inicio">
+<p> Descubra qual tipo de leitor combina mais com você. Responda ao questionário, descubra seu perfil literário e encontre uma sugestão de livro para sua próxima leitura. </p>
 
-                <button id="iniciar">
-                    INICIAR
-                </button>
+</section>
 
-            </div>
+<!-- CARDS PRINCIPAIS -->
 
+<section class="cards-principais">
 
-            <div class="quiz" id="quiz">
+<!-- PRIMEIRO CARD: PERFIS -->
 
-                <h3 id="numero-pergunta">
-                    1. Pergunta...
-                </h3>
+<section class="perfis">
 
-                <div class="respostas">
+<h2>Perfis de leitores</h2>
 
-                    <button class="resposta"></button>
+<div class="lista-perfis">
 
-                    <button class="resposta"></button>
+<div class="perfil-card">
 
-                    <button class="resposta"></button>
+<h3>♡ Leitor Romântico</h3>
 
-                </div>
+<p> Gosta de histórias de amor, sentimentos e relacionamentos marcantes. </p>
 
-            </div>
+</div>
 
+<div class="perfil-card">
 
-            <div class="resultado" id="resultado">
+<h3>✦ Leitor Aventureiro</h3>
 
-                <h3>Seu perfil é:</h3>
+<p> Prefere aventuras, mundos fantásticos e grandes desafios. </p>
 
-                <h2 id="perfil"></h2>
+</div>
 
-                <p id="descricao-perfil"></p>
+<div class="perfil-card">
 
-            </div>
+<h3>⌕ Leitor Misterioso</h3>
 
-        </section>
+<p> Adora pistas, segredos, investigações e histórias cheias de reviravoltas. </p>
 
+</div>
 
-        <section class="livro-sugerido">
+</div>
 
-            <h2>Livro sugerido</h2>
+</section>
 
-            <div class="livro" id="livro">
+<!-- SEGUNDO CARD: QUESTIONÁRIO -->
 
-                <img
-                    id="capa-livro"
-                    src=""
-                    alt="Capa do livro"
-                >
+<section class="questionario">
 
-                <h3 id="nome-livro"></h3>
+<h2>Questionário</h2>
 
-                <p id="autor-livro"></p>
+<div class="inicio" id="inicio">
 
-            </div>
+<button id="iniciar"> INICIAR </button>
 
+</div>
 
-            <button class="sortear" id="sortear">
-                SORTEAR LIVRO
-            </button>
+<div class="quiz" id="quiz">
 
-        </section>
+<h3 id="numero-pergunta"> 1. Pergunta... </h3>
 
-    </main>
+<div class="respostas">
 
+<button class="resposta"></button>
 
-    <footer class="rodape"></footer>
+<button class="resposta"></button>
 
+<button class="resposta"></button>
 
-    <script src="main.js"></script>
+</div>
+
+</div>
+
+<div class="resultado" id="resultado">
+
+<h3>Seu perfil é:</h3>
+
+<h2 id="perfil"></h2>
+
+<p id="descricao-perfil"></p>
+
+</div>
+
+</section>
+
+<!-- TERCEIRO CARD: LIVRO -->
+
+<section class="livro-sugerido">
+
+<h2>Livro sugerido</h2>
+
+<div class="livro" id="livro">
+
+<img id="capa-livro" src="livro5.jpg" alt="Capa do livro" >
+
+<h3 id="nome-livro"></h3>
+
+<p id="autor-livro"></p>
+
+</div>
+
+<button class="sortear" id="sortear"> SORTEAR LIVRO </button>
+
+</section>
+
+</section>
+
+</main>
+
+<footer class="rodape"></footer>
+
+<script src="main.js"></script>
 
 </body>
 
