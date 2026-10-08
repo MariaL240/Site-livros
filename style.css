@@ -1,8 +1,8 @@
-::root { --rosa-claro: #ffe9ef; --rosa: #f45b9b; --rosa-escuro: #df4788; --branco: #fffafa; --preto: #222222; --rosa-suave: #fff1f5; }
+:root { --rosa-claro: #ffe9ef; --rosa: #f45b9b; --rosa-escuro: #df4788; --branco: #fffafa; --preto: #222; --rosa-suave: #fff1f5; }
 
 {
 
-box-sizing: border-box; font-weight: 400; }
+box-sizing: border-box; }
 
 body { margin: 0; min-height: 100vh;
 
@@ -12,23 +12,21 @@ font-family: Georgia, 'Times New Roman', serif;
 
 display: flex; flex-direction: column; }
 
-/* ========================= CABEÇALHO ========================= */
+/* CABEÇALHO */
 
-.cabecalho { width: 100%; height: 70px;
+.cabecalho { height: 70px; width: 100%;
 
 background-color: var(--rosa);
 
-display: flex; justify-content: center; align-items: center;
-
-flex-shrink: 0; }
+display: flex; justify-content: center; align-items: center; }
 
 .cabecalho h1 { margin: 0;
 
 font-size: 30px; font-weight: bold; }
 
-/* ========================= CONTEÚDO ========================= */
+/* CONTEÚDO */
 
-.conteudo { width: 100%; max-width: 1100px;
+.conteudo { width: 100%; max-width: 1150px;
 
 margin: 0 auto;
 
@@ -36,19 +34,19 @@ padding: 35px 20px;
 
 flex: 1; }
 
-/* ========================= INTRODUÇÃO ========================= */
+/* INTRODUÇÃO */
 
-.introducao { width: 100%; max-width: 850px;
+.introducao { text-align: center;
 
-margin: 0 auto 30px;
-
-text-align: center; }
+margin-bottom: 30px; }
 
 .introducao h2 { margin: 0 0 12px;
 
 font-family: Arial, sans-serif;
 
-font-size: 22px; font-weight: bold;
+font-size: 22px;
+
+font-weight: bold;
 
 color: var(--rosa-escuro); }
 
@@ -62,31 +60,41 @@ line-height: 1.6; }
 
 /* ========================= OS 3 CARDS ========================= */
 
-.cards-principais { width: 100%;
+.cards-principais {
 
-display: grid;
+width: 100%;
 
-grid-template-columns: repeat(3, 1fr);
+display: flex;
 
-gap: 18px;
+flex-direction: row;
+
+gap: 20px;
 
 align-items: stretch; }
 
-/* ========================= CARDS ========================= */
+/* CARD */
 
-.perfis, .questionario, .livro-sugerido { background-color: var(--branco);
+.card {
 
-min-height: 370px;
+flex: 1;
+
+width: 33.333%;
+
+min-height: 380px;
+
+background-color: var(--branco);
 
 border-radius: 22px;
 
 padding: 22px;
 
-text-align: center;
-
 box-shadow: 0 4px 12px rgba(223, 71, 136, 0.10); }
 
-.perfis h2, .questionario h2, .livro-sugerido h2 { margin: 0 0 20px;
+.card > h2 {
+
+margin: 0 0 20px;
+
+text-align: center;
 
 font-family: Arial, sans-serif;
 
@@ -96,27 +104,33 @@ font-weight: bold; }
 
 /* ========================= PERFIS ========================= */
 
-.lista-perfis { display: flex;
+.lista-perfis {
+
+display: flex;
 
 flex-direction: column;
 
-gap: 12px; }
+gap: 13px; }
 
-.perfil-card { background-color: var(--rosa-suave);
+.perfil-card {
+
+background-color: var(--rosa-suave);
 
 border-radius: 14px;
 
-padding: 13px 15px;
+padding: 14px;
 
-text-align: left;
+transition: 0.2s; }
 
-transition: 0.2s ease; }
+.perfil-card:hover {
 
-.perfil-card:hover { background-color: #ffe1eb;
+background-color: #ffe1eb;
 
 transform: translateY(-2px); }
 
-.perfil-card h3 { margin: 0 0 7px;
+.perfil-card h3 {
+
+margin: 0 0 7px;
 
 font-family: Arial, sans-serif;
 
@@ -126,23 +140,29 @@ font-weight: bold;
 
 color: var(--rosa-escuro); }
 
-.perfil-card p { margin: 0;
+.perfil-card p {
+
+margin: 0;
 
 font-family: Arial, sans-serif;
 
 font-size: 12px;
 
-line-height: 1.45; }
+line-height: 1.5; }
 
 /* ========================= QUESTIONÁRIO ========================= */
 
-.questionario { display: flex;
+.questionario {
+
+display: flex;
 
 flex-direction: column; }
 
 /* INÍCIO */
 
-.inicio { flex: 1;
+.inicio {
+
+flex: 1;
 
 display: flex;
 
@@ -152,9 +172,13 @@ justify-content: center;
 
 align-items: center;
 
-gap: 15px; }
+text-align: center;
 
-.inicio p { max-width: 230px;
+gap: 18px; }
+
+.inicio p {
+
+max-width: 220px;
 
 margin: 0;
 
@@ -166,7 +190,11 @@ line-height: 1.5;
 
 color: #555; }
 
-#iniciar { background-color: var(--rosa);
+/* BOTÃO INICIAR */
+
+#iniciar {
+
+background-color: var(--rosa);
 
 color: black;
 
@@ -176,45 +204,51 @@ border-radius: 12px;
 
 padding: 14px 40px;
 
-cursor: pointer;
-
 font-family: Arial, sans-serif;
 
 font-size: 14px;
 
-transition: 0.2s ease; }
+cursor: pointer;
 
-#iniciar:hover { background-color: var(--rosa-escuro);
+transition: 0.2s; }
+
+#iniciar:hover {
+
+background-color: var(--rosa-escuro);
 
 transform: translateY(-2px); }
 
 /* ========================= QUIZ ========================= */
 
-.quiz { display: none;
+.quiz {
 
-flex: 1;
+display: none;
 
-text-align: left;
+padding: 10px 5px;
 
-font-family: Arial, sans-serif;
+font-family: Arial, sans-serif; }
 
-padding: 10px 5px; }
+.quiz h3 {
 
-.quiz h3 { margin: 25px 0;
+margin: 20px 0;
 
 font-size: 15px;
 
 line-height: 1.5; }
 
-/* RESPOSTAS */
+.respostas {
 
-.respostas { display: flex;
+display: flex;
 
 flex-direction: column;
 
-gap: 13px; }
+gap: 12px; }
 
-.resposta { width: 100%;
+.resposta {
+
+width: 100%;
+
+padding: 9px;
 
 background-color: transparent;
 
@@ -226,37 +260,37 @@ text-align: left;
 
 font-family: Arial, sans-serif;
 
-font-size: 14px;
+font-size: 13px;
 
-line-height: 1.4;
+cursor: pointer; }
 
-padding: 8px;
+.resposta:hover {
 
-cursor: pointer;
+background-color: var(--rosa-suave);
 
-transition: 0.2s ease; }
-
-.resposta:hover { background-color: var(--rosa-suave);
-
-color: var(--rosa-escuro);
-
-padding-left: 12px; }
+color: var(--rosa-escuro); }
 
 /* ========================= RESULTADO ========================= */
 
-.resultado { display: none;
+.resultado {
+
+display: none;
 
 text-align: center;
 
 font-family: Arial, sans-serif;
 
-padding: 25px 10px; }
+padding: 30px 10px; }
 
-.resultado h3 { margin: 5px 0 12px;
+.resultado h3 {
+
+margin: 0 0 12px;
 
 font-size: 14px; }
 
-.resultado h2 { margin: 12px 0;
+.resultado h2 {
+
+margin: 10px 0;
 
 color: var(--rosa-escuro);
 
@@ -264,7 +298,9 @@ font-size: 22px;
 
 font-weight: bold; }
 
-.resultado p { margin: 0;
+.resultado p {
+
+margin: 0;
 
 font-size: 13px;
 
@@ -272,11 +308,19 @@ line-height: 1.5; }
 
 /* ========================= LIVRO ========================= */
 
-.livro-sugerido { display: flex;
+.livro-sugerido {
 
-flex-direction: column; }
+display: flex;
 
-.livro { flex: 1;
+flex-direction: column;
+
+align-items: center; }
+
+.livro {
+
+flex: 1;
+
+width: 100%;
 
 display: flex;
 
@@ -284,9 +328,15 @@ flex-direction: column;
 
 align-items: center;
 
-justify-content: center; }
+justify-content: center;
 
-.livro img { width: 120px; height: 170px;
+text-align: center; }
+
+.livro img {
+
+width: 125px;
+
+height: 175px;
 
 object-fit: cover;
 
@@ -294,7 +344,9 @@ border-radius: 4px;
 
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
 
-#nome-livro { margin: 10px 0 3px;
+#nome-livro {
+
+margin: 12px 0 4px;
 
 font-family: Arial, sans-serif;
 
@@ -302,7 +354,9 @@ font-size: 14px;
 
 font-weight: bold; }
 
-#autor-livro { margin: 0;
+#autor-livro {
+
+margin: 0;
 
 font-family: Arial, sans-serif;
 
@@ -310,15 +364,13 @@ font-size: 12px;
 
 color: #555; }
 
-/* ========================= BOTÃO SORTEAR ========================= */
+/* BOTÃO SORTEAR */
 
-.sortear { display: none;
+.sortear {
+
+display: none;
 
 margin: 10px auto 0;
-
-font-family: Arial, sans-serif;
-
-font-size: 12px;
 
 padding: 9px 20px;
 
@@ -330,17 +382,21 @@ border: none;
 
 border-radius: 12px;
 
-cursor: pointer;
+font-family: Arial, sans-serif;
 
-transition: 0.2s ease; }
+font-size: 12px;
 
-.sortear:hover { background-color: var(--rosa-escuro);
+cursor: pointer; }
 
-transform: translateY(-2px); }
+.sortear:hover {
 
-/* ========================= RODAPÉ ========================= */
+background-color: var(--rosa-escuro); }
 
-.rodape { width: 100%;
+/* RODAPÉ */
+
+.rodape {
+
+width: 100%;
 
 height: 30px;
 
@@ -352,56 +408,68 @@ flex-shrink: 0; }
 
 @media screen and (max-width: 850px) {
 
-.cards-principais { grid-template-columns: 1fr 1fr; }
+.cards-principais {
 
-.perfis { grid-column: 1 / -1; }
+display: grid;
 
-.lista-perfis { display: grid;
+grid-template-columns: 1fr 1fr; }
 
-grid-template-columns: repeat(3, 1fr);
+.perfis {
 
-gap: 12px; } }
+width: 100%;
+
+grid-column: 1 / -1; }
+
+.lista-perfis {
+
+display: grid;
+
+grid-template-columns: repeat(3, 1fr); }
+
+.card {
+
+width: 100%; } }
 
 /* ========================= CELULAR ========================= */
 
 @media screen and (max-width: 600px) {
 
-.cabecalho { height: 65px; }
+.cabecalho {
 
-.cabecalho h1 { font-size: 25px; }
+height: 65px; }
 
-.conteudo { padding: 25px 15px; }
+.cabecalho h1 {
 
-.introducao { margin-bottom: 25px; }
+font-size: 25px; }
 
-.introducao h2 { font-size: 19px; }
+.conteudo {
 
-.introducao p { font-size: 14px; }
+padding: 25px 15px; }
 
-.cards-principais { display: flex;
+.introducao h2 {
+
+font-size: 19px; }
+
+.introducao p {
+
+font-size: 14px; }
+
+.cards-principais {
+
+display: flex;
 
 flex-direction: column;
 
-gap: 16px; }
+gap: 18px; }
 
-.perfis, .questionario, .livro-sugerido { width: 100%;
+.card {
 
-min-height: 340px;
+width: 100%;
 
-padding: 20px; }
+min-height: 350px; }
 
-.lista-perfis { display: flex;
+.lista-perfis {
+
+display: flex;
 
 flex-direction: column; } }
-
-/* ========================= CELULARES PEQUENOS ========================= */
-
-@media screen and (max-width: 400px) {
-
-.cabecalho h1 { font-size: 23px; }
-
-.introducao h2 { font-size: 18px; }
-
-.perfis, .questionario, .livro-sugerido { padding: 18px; }
-
-.livro img { width: 105px; height: 150px; } }
