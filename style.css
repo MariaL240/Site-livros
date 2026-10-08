@@ -4,35 +4,43 @@
 
 box-sizing: border-box; }
 
-body { margin: 0; min-height: 100vh;
+body { margin: 0;
 
-background-color: var(--rosa-claro); color: var(--preto);
+min-height: 100vh;
 
-font-family: Georgia, 'Times New Roman', serif;
+background: var(--rosa-claro);
 
-display: flex; flex-direction: column; }
+color: var(--preto);
+
+font-family: Georgia, "Times New Roman", serif; }
 
 /* CABEÇALHO */
 
-.cabecalho { height: 70px; width: 100%;
+.cabecalho { height: 70px;
 
-background-color: var(--rosa);
+background: var(--rosa);
 
-display: flex; justify-content: center; align-items: center; }
+display: flex;
+
+align-items: center;
+
+justify-content: center; }
 
 .cabecalho h1 { margin: 0;
 
-font-size: 30px; font-weight: bold; }
+font-size: 30px;
+
+font-weight: bold; }
 
 /* CONTEÚDO */
 
-.conteudo { width: 100%; max-width: 1150px;
+.conteudo { width: 100%;
+
+max-width: 1150px;
 
 margin: 0 auto;
 
-padding: 35px 20px;
-
-flex: 1; }
+padding: 35px 20px; }
 
 /* INTRODUÇÃO */
 
@@ -40,61 +48,45 @@ flex: 1; }
 
 margin-bottom: 30px; }
 
-.introducao h2 { margin: 0 0 12px;
+.introducao h2 { margin: 0 0 10px;
 
 font-family: Arial, sans-serif;
 
 font-size: 22px;
 
-font-weight: bold;
-
 color: var(--rosa-escuro); }
 
-.introducao p { max-width: 750px;
+.introducao p { max-width: 700px;
 
-margin: 0 auto;
+margin: auto;
 
 font-size: 15px;
 
 line-height: 1.6; }
 
-/* ========================= OS 3 CARDS ========================= */
+/* ========================= 3 CARDS ========================= */
 
-.cards-principais {
-
-width: 100%;
-
-display: flex;
-
-flex-direction: row;
+.cards { display: flex;
 
 gap: 20px;
 
-align-items: stretch; }
+width: 100%; }
 
-/* CARD */
+.card { width: 33.333%;
 
-.card {
+min-height: 390px;
 
-flex: 1;
+padding: 25px;
 
-width: 33.333%;
-
-min-height: 380px;
-
-background-color: var(--branco);
+background: var(--branco);
 
 border-radius: 22px;
 
-padding: 22px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 
-box-shadow: 0 4px 12px rgba(223, 71, 136, 0.10); }
+text-align: center; }
 
-.card > h2 {
-
-margin: 0 0 20px;
-
-text-align: center;
+.card > h2 { margin: 0 0 25px;
 
 font-family: Arial, sans-serif;
 
@@ -104,45 +96,27 @@ font-weight: bold; }
 
 /* ========================= PERFIS ========================= */
 
-.lista-perfis {
+.perfil-card { background: var(--rosa-suave);
 
-display: flex;
+padding: 13px;
 
-flex-direction: column;
+margin-bottom: 12px;
 
-gap: 13px; }
+border-radius: 13px;
 
-.perfil-card {
+text-align: left; }
 
-background-color: var(--rosa-suave);
+.perfil-card h3 { margin: 0 0 7px;
 
-border-radius: 14px;
-
-padding: 14px;
-
-transition: 0.2s; }
-
-.perfil-card:hover {
-
-background-color: #ffe1eb;
-
-transform: translateY(-2px); }
-
-.perfil-card h3 {
-
-margin: 0 0 7px;
+color: var(--rosa-escuro);
 
 font-family: Arial, sans-serif;
 
 font-size: 14px;
 
-font-weight: bold;
+font-weight: bold; }
 
-color: var(--rosa-escuro); }
-
-.perfil-card p {
-
-margin: 0;
+.perfil-card p { margin: 0;
 
 font-family: Arial, sans-serif;
 
@@ -150,35 +124,27 @@ font-size: 12px;
 
 line-height: 1.5; }
 
-/* ========================= QUESTIONÁRIO ========================= */
+/* ========================= QUIZ ========================= */
 
-.questionario {
-
-display: flex;
+.quiz-card { display: flex;
 
 flex-direction: column; }
 
 /* INÍCIO */
 
-.inicio {
-
-flex: 1;
+#inicio { flex: 1;
 
 display: flex;
 
 flex-direction: column;
 
-justify-content: center;
-
 align-items: center;
 
-text-align: center;
+justify-content: center;
 
-gap: 18px; }
+gap: 20px; }
 
-.inicio p {
-
-max-width: 220px;
+.texto-inicio { max-width: 230px;
 
 margin: 0;
 
@@ -190,71 +156,55 @@ line-height: 1.5;
 
 color: #555; }
 
-/* BOTÃO INICIAR */
+/* BOTÃO */
 
-#iniciar {
+#iniciar, #sortear { border: none;
 
-background-color: var(--rosa);
+background: var(--rosa);
 
-color: black;
+color: #000;
 
-border: none;
+padding: 13px 30px;
 
 border-radius: 12px;
 
-padding: 14px 40px;
-
 font-family: Arial, sans-serif;
 
-font-size: 14px;
+font-size: 13px;
 
-cursor: pointer;
+cursor: pointer; }
 
-transition: 0.2s; }
-
-#iniciar:hover {
-
-background-color: var(--rosa-escuro);
-
-transform: translateY(-2px); }
+#iniciar:hover, #sortear:hover { background: var(--rosa-escuro); }
 
 /* ========================= QUIZ ========================= */
 
-.quiz {
+#quiz { display: none;
 
-display: none;
-
-padding: 10px 5px;
+text-align: left;
 
 font-family: Arial, sans-serif; }
 
-.quiz h3 {
-
-margin: 20px 0;
+#numero-pergunta { margin: 20px 0;
 
 font-size: 15px;
 
 line-height: 1.5; }
 
-.respostas {
-
-display: flex;
+.respostas { display: flex;
 
 flex-direction: column;
 
 gap: 12px; }
 
-.resposta {
+.resposta { width: 100%;
 
-width: 100%;
-
-padding: 9px;
-
-background-color: transparent;
+padding: 10px;
 
 border: none;
 
-border-radius: 8px;
+border-radius: 9px;
+
+background: transparent;
 
 text-align: left;
 
@@ -264,77 +214,49 @@ font-size: 13px;
 
 cursor: pointer; }
 
-.resposta:hover {
-
-background-color: var(--rosa-suave);
+.resposta:hover { background: var(--rosa-suave);
 
 color: var(--rosa-escuro); }
 
 /* ========================= RESULTADO ========================= */
 
-.resultado {
+#resultado { display: none;
 
-display: none;
-
-text-align: center;
+padding: 25px 5px;
 
 font-family: Arial, sans-serif;
 
-padding: 30px 10px; }
+text-align: center; }
 
-.resultado h3 {
-
-margin: 0 0 12px;
-
-font-size: 14px; }
-
-.resultado h2 {
-
-margin: 10px 0;
-
-color: var(--rosa-escuro);
-
-font-size: 22px;
-
-font-weight: bold; }
-
-.resultado p {
-
-margin: 0;
-
-font-size: 13px;
+#resultado p { font-size: 13px;
 
 line-height: 1.5; }
 
+#resultado h2 { color: var(--rosa-escuro);
+
+font-size: 21px;
+
+font-weight: bold; }
+
 /* ========================= LIVRO ========================= */
 
-.livro-sugerido {
-
-display: flex;
+.livro-card { display: flex;
 
 flex-direction: column;
 
 align-items: center; }
 
-.livro {
-
-flex: 1;
-
-width: 100%;
+.livro { flex: 1;
 
 display: flex;
 
 flex-direction: column;
 
-align-items: center;
-
 justify-content: center;
 
-text-align: center; }
+align-items: center; }
 
-.livro img {
-
-width: 125px;
+#capa-livro { width: 125px;
 
 height: 175px;
 
@@ -342,11 +264,9 @@ object-fit: cover;
 
 border-radius: 4px;
 
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
 
-#nome-livro {
-
-margin: 12px 0 4px;
+#nome-livro { margin: 12px 0 3px;
 
 font-family: Arial, sans-serif;
 
@@ -354,9 +274,7 @@ font-size: 14px;
 
 font-weight: bold; }
 
-#autor-livro {
-
-margin: 0;
+#autor-livro { margin: 0;
 
 font-family: Arial, sans-serif;
 
@@ -366,110 +284,40 @@ color: #555; }
 
 /* BOTÃO SORTEAR */
 
-.sortear {
+#sortear { display: none;
 
-display: none;
-
-margin: 10px auto 0;
-
-padding: 9px 20px;
-
-background-color: var(--rosa);
-
-color: black;
-
-border: none;
-
-border-radius: 12px;
-
-font-family: Arial, sans-serif;
-
-font-size: 12px;
-
-cursor: pointer; }
-
-.sortear:hover {
-
-background-color: var(--rosa-escuro); }
+margin-top: 10px; }
 
 /* RODAPÉ */
 
-.rodape {
-
-width: 100%;
+.rodape { width: 100%;
 
 height: 30px;
 
-background-color: var(--rosa);
-
-flex-shrink: 0; }
+background: var(--rosa); }
 
 /* ========================= TABLET ========================= */
 
-@media screen and (max-width: 850px) {
+@media (max-width: 850px) {
 
-.cards-principais {
+.cards { flex-wrap: wrap; }
 
-display: grid;
+.card { width: calc(50% - 10px); }
 
-grid-template-columns: 1fr 1fr; }
-
-.perfis {
-
-width: 100%;
-
-grid-column: 1 / -1; }
-
-.lista-perfis {
-
-display: grid;
-
-grid-template-columns: repeat(3, 1fr); }
-
-.card {
-
-width: 100%; } }
+.card:first-child { width: 100%; } }
 
 /* ========================= CELULAR ========================= */
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
 
-.cabecalho {
+.cabecalho { height: 65px; }
 
-height: 65px; }
+.cabecalho h1 { font-size: 25px; }
 
-.cabecalho h1 {
+.conteudo { padding: 25px 15px; }
 
-font-size: 25px; }
+.cards { flex-direction: column; }
 
-.conteudo {
+.card, .card:first-child { width: 100%; }
 
-padding: 25px 15px; }
-
-.introducao h2 {
-
-font-size: 19px; }
-
-.introducao p {
-
-font-size: 14px; }
-
-.cards-principais {
-
-display: flex;
-
-flex-direction: column;
-
-gap: 18px; }
-
-.card {
-
-width: 100%;
-
-min-height: 350px; }
-
-.lista-perfis {
-
-display: flex;
-
-flex-direction: column; } }
+.card { min-height: 350px; } }
