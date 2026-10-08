@@ -1,4 +1,3 @@
-
 <!DOCTYPE html> <html lang="pt-br">
 
 <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,59 +12,53 @@
 
 <main class="conteudo">
 
-<!-- INTRODUÇÃO -->
-
 <section class="introducao">
 
 <h2>Bem-vindo ao Destino Literário!</h2>
 
-<p> Descubra qual tipo de leitor combina mais com você. Responda ao questionário, descubra seu perfil literário e encontre uma sugestão de livro para sua próxima leitura. </p>
+<p> Descubra qual tipo de leitor combina mais com você. Responda às perguntas e descubra seu perfil literário. </p>
 
 </section>
 
-<!-- OS 3 CARDS -->
+<div class="cards">
 
-<div class="cards-principais">
+<!-- ========================= CARD 1 ========================== -->
 
-<!-- CARD 1 -->
-
-<section class="card perfis">
+<section class="card">
 
 <h2>Perfis de leitores</h2>
 
-<div class="lista-perfis">
+<div class="perfil-card"> <h3>♡ Leitor Romântico</h3>
 
-<div class="perfil-card"> <h3>♡ Leitor Romântico</h3> <p> Gosta de histórias de amor, sentimentos e relacionamentos marcantes. </p> </div>
+<p> Gosta de histórias de amor, sentimentos e relacionamentos marcantes. </p> </div>
 
-<div class="perfil-card"> <h3>✦ Leitor Aventureiro</h3> <p> Prefere aventuras, mundos fantásticos e grandes desafios. </p> </div>
+<div class="perfil-card"> <h3>✦ Leitor Aventureiro</h3>
 
-<div class="perfil-card"> <h3>⌕ Leitor Misterioso</h3> <p> Adora pistas, segredos, investigações e histórias cheias de reviravoltas. </p> </div>
+<p> Prefere aventuras, mundos fantásticos e grandes desafios. </p> </div>
 
-</div>
+<div class="perfil-card"> <h3>⌕ Leitor Misterioso</h3>
+
+<p> Adora pistas, segredos, investigações e reviravoltas. </p> </div>
 
 </section>
 
-<!-- CARD 2 -->
+<!-- ========================= CARD 2 - QUIZ ========================== -->
 
-<section class="card questionario">
+<section class="card quiz-card">
 
 <h2>Questionário</h2>
 
-<!-- TELA INICIAL -->
+<div id="inicio">
 
-<div class="inicio" id="inicio">
-
-<p> Responda algumas perguntas para descobrir seu perfil literário. </p>
+<p class="texto-inicio"> Responda 5 perguntas para descobrir qual perfil de leitor combina com você. </p>
 
 <button id="iniciar"> INICIAR </button>
 
 </div>
 
-<!-- PERGUNTAS -->
+<div id="quiz">
 
-<div class="quiz" id="quiz">
-
-<h3 id="numero-pergunta"> 1. Pergunta... </h3>
+<h3 id="numero-pergunta"></h3>
 
 <div class="respostas">
 
@@ -79,11 +72,9 @@
 
 </div>
 
-<!-- RESULTADO -->
+<div id="resultado">
 
-<div class="resultado" id="resultado">
-
-<h3>Seu perfil é:</h3>
+<p>Seu perfil é:</p>
 
 <h2 id="perfil"></h2>
 
@@ -93,4 +84,8 @@
 
 </section>
 
-<!-- CARD 3 -->
+<!-- ========================= CARD 3 - LIVRO ========================== -->
+
+<section class="card livro-card">
+
+<h2>Livro sugerido</h2>
