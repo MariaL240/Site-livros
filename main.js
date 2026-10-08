@@ -22,303 +22,178 @@ const autorLivro = document.querySelector('#autor-livro');
 
 const botaoSortear = document.querySelector('#sortear');
 
-
 let perguntaAtual = 0;
 
 let pontos = [0, 0, 0];
 
 let perfilAtual = 0;
 
-
 /* PERGUNTAS */
 
 const perguntas = [
 
-    {
-        pergunta: 'Qual história você escolheria?',
-        respostas: [
-            'Uma história de amor',
-            'Uma aventura fantástica',
-            'Um grande mistério'
-        ]
-    },
+{ pergunta: 'Qual história você escolheria?', respostas: [ 'Uma história de amor', 'Uma aventura fantástica', 'Um grande mistério' ] },
 
-    {
-        pergunta: 'O que mais chama sua atenção em um livro?',
-        respostas: [
-            'Os sentimentos dos personagens',
-            'Os lugares e aventuras',
-            'Os segredos da história'
-        ]
-    },
+{ pergunta: 'O que mais chama sua atenção em um livro?', respostas: [ 'Os sentimentos dos personagens', 'Os lugares e aventuras', 'Os segredos da história' ] },
 
-    {
-        pergunta: 'Qual cenário você escolheria?',
-        respostas: [
-            'Uma história cheia de romance',
-            'Um mundo mágico',
-            'Uma cidade cheia de mistérios'
-        ]
-    },
+{ pergunta: 'Qual cenário você escolheria?', respostas: [ 'Uma história cheia de romance', 'Um mundo mágico', 'Uma cidade cheia de mistérios' ] },
 
-    {
-        pergunta: 'Qual personagem você seria?',
-        respostas: [
-            'Uma pessoa apaixonada',
-            'Um grande aventureiro',
-            'Um investigador'
-        ]
-    },
+{ pergunta: 'Qual personagem você seria?', respostas: [ 'Uma pessoa apaixonada', 'Um grande aventureiro', 'Um investigador' ] },
 
-    {
-        pergunta: 'Como você gosta de terminar um livro?',
-        respostas: [
-            'Com o coração quentinho',
-            'Com vontade de viver uma aventura',
-            'Surpreso com a descoberta'
-        ]
-    }
+{ pergunta: 'Como você gosta de terminar um livro?', respostas: [ 'Com o coração quentinho', 'Com vontade de viver uma aventura', 'Surpreso com a descoberta' ] }
 
 ];
-
 
 /* PERFIS E LIVROS */
 
 const perfis = [
 
-    {
-        nome: 'Leitor Romântico',
+{ nome: 'Leitor Romântico',
 
-        descricao:
-        'Você gosta de histórias cheias de sentimentos, relações e aquele romance que prende até a última página.',
+descricao: 'Você gosta de histórias cheias de sentimentos, relações e aquele romance que prende até a última página.',
 
-        livros: [
+livros: [
 
-            {
-                nome: 'Divine Rivals',
-                autor: 'Rebecca Ross',
-                capa: 'book1.jpg'
-            },
+{ nome: 'Divinos Rivais', autor: 'Rebecca Ross', capa: 'book1.jpg' },
 
-            {
-                nome: 'Powerless',
-                autor: 'Lauren Roberts',
-                capa: 'book2.jpg'
-            },
+{ nome: 'Powerless', autor: 'Lauren Roberts', capa: 'book2.jpg' },
 
-            {
-                nome: 'Better Than the Movies',
-                autor: 'Lynn Painter',
-                capa: 'book3.jpg'
-            }
+{ nome: 'Melhor do que nos filmes', autor: 'Lynn Painter', capa: 'book3.jpg' }
 
-        ]
-    },
+] },
 
+{ nome: 'Leitor Aventureiro',
 
-    {
-        nome: 'Leitor Aventureiro',
+descricao: 'Sua imaginação gosta de viajar! Você prefere mundos fantásticos, aventuras e personagens que enfrentam grandes desafios.',
 
-        descricao:
-        'Sua imaginação gosta de viajar! Você prefere mundos fantásticos, aventuras e personagens que enfrentam grandes desafios.',
+livros: [
 
-        livros: [
+{ nome: 'Powerless', autor: 'Lauren Roberts', capa: 'livro5.jpg' },
 
-            {
-                nome: 'Powerless',
-                autor: 'Lauren Roberts',
-                capa: 'livro5.jpg'
-            },
+{ nome: 'A Rainha Vermelha', autor: 'Victoria Aveyard', capa: 'book4.jpg' },
 
-            {
-                nome: 'A Rainha Vermelha',
-                autor: 'Victoria Aveyard',
-                capa: 'book4.jpg'
-            },
+{ nome: 'Era uma vez um coração partido', autor: 'Stephanie Garber', capa: 'book5.jpg' }
 
-            {
-                nome: 'Once Upon a Broken Heart',
-                autor: 'Stephanie Garber',
-                capa: 'book5.jpg'
-            }
+] },
 
-        ]
-    },
+{ nome: 'Leitor Misterioso',
 
+descricao: 'Você gosta de pistas, segredos e reviravoltas. Quanto mais difícil for descobrir o final, melhor.',
 
-    {
-        nome: 'Leitor Misterioso',
+livros: [
 
-        descricao:
-        'Você gosta de pistas, segredos e reviravoltas. Quanto mais difícil for descobrir o final, melhor.',
+{ nome: 'Jogos de Herança', autor: 'Jennifer Lynn Barnes', capa: 'book6.jpg' },
 
-        livros: [
+{ nome: 'Manual de assassinato para boas garotas', autor: 'Holly Jackson', capa: 'book7.jpg' },
 
-            {
-                nome: 'The Inheritance Games',
-                autor: 'Jennifer Lynn Barnes',
-                capa: 'book6.jpg'
-            },
+{ nome: 'O reaparecimento de Rachel Price', autor: 'Holly Jackson', capa: 'book8.jpg' }
 
-            {
-                nome: 'A Good Girl’s Guide to Murder',
-                autor: 'Holly Jackson',
-                capa: 'book7.jpg'
-            },
-
-            {
-                nome: 'The Reappearance of Rachel Price',
-                autor: 'Holly Jackson',
-                capa: 'book8.jpg'
-            }
-
-        ]
-    }
+] }
 
 ];
-
 
 /* COMEÇAR */
 
 botaoIniciar.onclick = function() {
 
-    inicio.style.display = 'none';
+inicio.style.display = 'none';
 
-    quiz.style.display = 'block';
+quiz.style.display = 'block';
 
-    resultado.style.display = 'none';
+resultado.style.display = 'none';
 
-    perguntaAtual = 0;
+perguntaAtual = 0;
 
-    pontos = [0, 0, 0];
+pontos = [0, 0, 0];
 
-    mostraPergunta();
+mostraPergunta();
 
 };
-
 
 /* MOSTRAR PERGUNTA */
 
 function mostraPergunta() {
 
-    numeroPergunta.textContent =
-        (perguntaAtual + 1) +
-        '. ' +
-        perguntas[perguntaAtual].pergunta;
+numeroPergunta.textContent = (perguntaAtual + 1) + '. ' + perguntas[perguntaAtual].pergunta;
 
+for (let i = 0; i < respostas.length; i++) {
 
-    for (let i = 0; i < respostas.length; i++) {
-
-        respostas[i].textContent =
-            String.fromCharCode(65 + i) +
-            '. ' +
-            perguntas[perguntaAtual].respostas[i];
-
-    }
+respostas[i].textContent = String.fromCharCode(65 + i) + '. ' + perguntas[perguntaAtual].respostas[i];
 
 }
 
+}
 
 /* ESCOLHER RESPOSTA */
 
 for (let i = 0; i < respostas.length; i++) {
 
-    respostas[i].onclick = function() {
+respostas[i].onclick = function() {
 
-        pontos[i]++;
+pontos[i]++;
 
-        perguntaAtual++;
+perguntaAtual++;
 
+if (perguntaAtual < perguntas.length) {
 
-        if (perguntaAtual < perguntas.length) {
+mostraPergunta();
 
-            mostraPergunta();
+} else {
 
-        } else {
-
-            mostraResultado();
-
-        }
-
-    };
+mostraResultado();
 
 }
 
+};
+
+}
 
 /* MOSTRAR RESULTADO */
 
 function mostraResultado() {
 
-    let maiorPontuacao =
-        Math.max(...pontos);
+let maiorPontuacao = Math.max(...pontos);
 
+perfilAtual = pontos.indexOf(maiorPontuacao);
 
-    perfilAtual =
-        pontos.indexOf(maiorPontuacao);
+quiz.style.display = 'none';
 
+resultado.style.display = 'block';
 
-    quiz.style.display = 'none';
+perfil.textContent = perfis[perfilAtual].nome;
 
-    resultado.style.display = 'block';
+descricaoPerfil.textContent = perfis[perfilAtual].descricao;
 
+botaoSortear.style.display = 'block';
 
-    perfil.textContent =
-        perfis[perfilAtual].nome;
-
-
-    descricaoPerfil.textContent =
-        perfis[perfilAtual].descricao;
-
-
-    botaoSortear.style.display = 'block';
-
-
-    sortearLivro();
+sortearLivro();
 
 }
-
 
 /* SORTEAR LIVRO */
 
 function sortearLivro() {
 
-    let livros =
-        perfis[perfilAtual].livros;
+let livros = perfis[perfilAtual].livros;
 
+let numeroAleatorio = Math.floor( Math.random() * livros.length );
 
-    let numeroAleatorio =
-        Math.floor(
-            Math.random() * livros.length
-        );
+let livroEscolhido = livros[numeroAleatorio];
 
+capaLivro.src = livroEscolhido.capa;
 
-    let livroEscolhido =
-        livros[numeroAleatorio];
+capaLivro.alt = 'Capa de ' + livroEscolhido.nome;
 
+nomeLivro.textContent = livroEscolhido.nome;
 
-    capaLivro.src =
-        livroEscolhido.capa;
-
-
-    capaLivro.alt =
-        'Capa de ' +
-        livroEscolhido.nome;
-
-
-    nomeLivro.textContent =
-        livroEscolhido.nome;
-
-
-    autorLivro.textContent =
-        livroEscolhido.autor;
+autorLivro.textContent = livroEscolhido.autor;
 
 }
-
 
 /* SORTEAR NOVAMENTE */
 
 botaoSortear.onclick = function() {
 
-    sortearLivro();
+sortearLivro();
 
 };
