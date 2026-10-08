@@ -1,4 +1,4 @@
-:root { --rosa-claro: #ffe9ef; --rosa: #f45b9b; --rosa-escuro: #df4788; --branco: #fffafa; --preto: #222222; --rosa-suave: #fff1f5; }
+::root { --rosa-claro: #ffe9ef; --rosa: #f45b9b; --rosa-escuro: #df4788; --branco: #fffafa; --preto: #222222; --rosa-suave: #fff1f5; }
 
 {
 
@@ -26,11 +26,13 @@ flex-shrink: 0; }
 
 font-size: 30px; font-weight: bold; }
 
-/* ========================= CONTEÚDO PRINCIPAL ========================= */
+/* ========================= CONTEÚDO ========================= */
 
 .conteudo { width: 100%; max-width: 1100px;
 
-margin: 0 auto; padding: 35px 20px;
+margin: 0 auto;
+
+padding: 35px 20px;
 
 flex: 1; }
 
@@ -44,17 +46,21 @@ text-align: center; }
 
 .introducao h2 { margin: 0 0 12px;
 
-font-family: Arial, sans-serif; font-size: 22px; font-weight: bold;
+font-family: Arial, sans-serif;
+
+font-size: 22px; font-weight: bold;
 
 color: var(--rosa-escuro); }
 
-.introducao p { margin: 0 auto;
+.introducao p { max-width: 750px;
 
-max-width: 750px;
+margin: 0 auto;
 
-font-size: 15px; line-height: 1.6; }
+font-size: 15px;
 
-/* ========================= CARDS PRINCIPAIS ========================= */
+line-height: 1.6; }
+
+/* ========================= OS 3 CARDS ========================= */
 
 .cards-principais { width: 100%;
 
@@ -66,11 +72,11 @@ gap: 18px;
 
 align-items: stretch; }
 
-/* ========================= CARDS GERAIS ========================= */
+/* ========================= CARDS ========================= */
 
 .perfis, .questionario, .livro-sugerido { background-color: var(--branco);
 
-min-height: 360px;
+min-height: 370px;
 
 border-radius: 22px;
 
@@ -78,19 +84,21 @@ padding: 22px;
 
 text-align: center;
 
-box-shadow: 0 4px 12px rgba(223, 71, 136, 0.08); }
+box-shadow: 0 4px 12px rgba(223, 71, 136, 0.10); }
 
 .perfis h2, .questionario h2, .livro-sugerido h2 { margin: 0 0 20px;
 
 font-family: Arial, sans-serif;
 
-font-size: 17px; font-weight: bold;
+font-size: 17px;
 
-color: var(--preto); }
+font-weight: bold; }
 
-/* ========================= PERFIS DE LEITORES ========================= */
+/* ========================= PERFIS ========================= */
 
-.lista-perfis { display: flex; flex-direction: column;
+.lista-perfis { display: flex;
+
+flex-direction: column;
 
 gap: 12px; }
 
@@ -128,7 +136,9 @@ line-height: 1.45; }
 
 /* ========================= QUESTIONÁRIO ========================= */
 
-.questionario { display: flex; flex-direction: column; }
+.questionario { display: flex;
+
+flex-direction: column; }
 
 /* INÍCIO */
 
@@ -136,7 +146,25 @@ line-height: 1.45; }
 
 display: flex;
 
-justify-content: center; align-items: center; }
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+gap: 15px; }
+
+.inicio p { max-width: 230px;
+
+margin: 0;
+
+font-family: Arial, sans-serif;
+
+font-size: 13px;
+
+line-height: 1.5;
+
+color: #555; }
 
 #iniciar { background-color: var(--rosa);
 
@@ -258,13 +286,13 @@ align-items: center;
 
 justify-content: center; }
 
-.livro img { width: 105px; height: 150px;
+.livro img { width: 120px; height: 170px;
 
 object-fit: cover;
 
-border-radius: 3px;
+border-radius: 4px;
 
-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12); }
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
 
 #nome-livro { margin: 10px 0 3px;
 
@@ -278,7 +306,9 @@ font-weight: bold; }
 
 font-family: Arial, sans-serif;
 
-font-size: 12px; }
+font-size: 12px;
+
+color: #555; }
 
 /* ========================= BOTÃO SORTEAR ========================= */
 
@@ -324,9 +354,7 @@ flex-shrink: 0; }
 
 .cards-principais { grid-template-columns: 1fr 1fr; }
 
-.perfis { grid-column: 1 / -1;
-
-min-height: auto; }
+.perfis { grid-column: 1 / -1; }
 
 .lista-perfis { display: grid;
 
@@ -358,7 +386,7 @@ gap: 16px; }
 
 .perfis, .questionario, .livro-sugerido { width: 100%;
 
-min-height: 330px;
+min-height: 340px;
 
 padding: 20px; }
 
@@ -376,4 +404,4 @@ flex-direction: column; } }
 
 .perfis, .questionario, .livro-sugerido { padding: 18px; }
 
-.livro img { width: 95px; height: 140px; } }
+.livro img { width: 105px; height: 150px; } }
