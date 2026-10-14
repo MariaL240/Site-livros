@@ -1,158 +1,51 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destino Literário</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destino Literário</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-  <main class="pagina">
 
-    <header class="cabecalho">
-      <p class="sobretitulo">✦ UM UNIVERSO DE HISTÓRIAS ✦</p>
-      <h1>Destino Literário</h1>
-      <p class="subtitulo">Descubra sua próxima leitura</p>
+    <header class="intro">
+        <h1>Destino Literário ♡</h1>
+        <p>Descubra seu perfil de leitor e encontre seu próximo book favorito!</p>
     </header>
 
-    <section class="introducao">
-      <span class="introducao-coracao">♡</span>
-      <h2>Encontre uma história feita para você</h2>
-      <p>
-        Responda a cinco perguntinhas sobre seus gostos literários,
-        descubra seu perfil de leitor e sorteie uma nova história
-        para se apaixonar. Seu próximo livro favorito pode estar
-        a um clique de distância!
-      </p>
-    </section>
+    <main class="container">
 
-    <section class="cartoes">
+        <section class="card">
+            <h2>Descubra seu perfil</h2>
+            <p>Responda às perguntas e descubra que tipo de leitor você é.</p>
 
-      <!-- CARTÃO DO QUESTIONÁRIO -->
-      <article class="cartao cartao-questionario">
-        <div class="cartao-topo">
-          <span class="numero-cartao">01</span>
-          <span class="icone-linha">♡</span>
-        </div>
-
-        <h2>Questionário</h2>
-        <p class="descricao-cartao">
-          Vamos descobrir que tipo de leitor você é?
-        </p>
-
-        <div id="inicio-questionario" class="inicio-questionario">
-          <div class="mini-ilustracao">📖</div>
-          <p>
-            Responda a cinco perguntas rápidas sobre suas
-            preferências e descubra seu perfil literário.
-          </p>
-          <button id="botao-iniciar" class="botao botao-principal">
-            INICIAR <span>→</span>
-          </button>
-        </div>
-
-        <form id="form-questionario" class="form-questionario" hidden>
-          <div class="progresso-linha">
-            <span id="progresso-texto">Pergunta 1 de 5</span>
-            <div class="progresso-fundo">
-              <div id="progresso-barra"></div>
+            <div id="quiz-area">
+                <button id="start-quiz">Começar o quiz</button>
             </div>
-          </div>
-
-          <fieldset>
-            <legend id="pergunta-texto"></legend>
-            <div id="opcoes-resposta" class="opcoes-resposta"></div>
-          </fieldset>
-
-          <p id="aviso-resposta" class="aviso" aria-live="polite"></p>
-
-          <div class="acoes-questionario">
-            <button id="botao-voltar" class="botao botao-secundario"
-              type="button" hidden>
-              Voltar
-            </button>
-            <button id="botao-proximo" class="botao botao-principal"
-              type="button">
-              Próxima →
-            </button>
-          </div>
-        </form>
-
-        <section id="resultado-perfil" class="resultado-perfil"
-          hidden aria-live="polite">
-          <span class="selo-perfil">SEU PERFIL É</span>
-          <h3 id="nome-perfil"></h3>
-          <p id="descricao-perfil"></p>
-          <p class="dica-perfil" id="dica-perfil"></p>
-          <button id="botao-refazer" class="botao botao-secundario"
-            type="button">
-            Refazer questionário
-          </button>
         </section>
-      </article>
 
-      <!-- CARTÃO DO SORTEIO -->
-      <article class="cartao cartao-sorteio">
-        <div class="cartao-topo">
-          <span class="numero-cartao">02</span>
-          <span class="icone-linha">✧</span>
-        </div>
+        <section class="card">
+            <h2>Seu próximo book</h2>
+            <p>Descubra seu perfil e sorteie um livro para ler.</p>
 
-        <h2>Livro sugerido</h2>
-        <p class="descricao-cartao">
-          Uma nova leitura espera por você.
-        </p>
+            <div id="book-area">
+                <div class="livro-vazio">
+                    <span>📚</span>
+                    <p>Seu próximo book pode estar aqui!</p>
+                </div>
 
-        <div id="estado-sorteio" class="estado-sorteio">
-          <div class="livros-decorativos">
-            <span>📕</span><span>📗</span><span>📘</span>
-          </div>
-          <p>
-            Descubra seu perfil primeiro. Depois, sorteie um dos
-            livros selecionados para combinar com seu estilo de leitura.
-          </p>
-          <button id="botao-sortear" class="botao botao-principal"
-            type="button" disabled>
-            SORTEAR <span>✦</span>
-          </button>
-          <p class="nota-sorteio">
-            O sorteio será liberado depois do questionário.
-          </p>
-        </div>
+                <button id="draw-book" disabled>Sortear meu book</button>
+            </div>
+        </section>
 
-        <div id="resultado-livro" class="resultado-livro"
-          hidden aria-live="polite">
-          <div class="capa-area">
-            <img id="capa-livro" src="images/Book%201.jpg"
-              alt="Capa do livro sorteado">
-          </div>
-          <p class="etiqueta-livro">SUA PRÓXIMA LEITURA</p>
-          <h3 id="titulo-livro"></h3>
-          <p id="autor-livro" class="autor-livro"></p>
-          <p id="genero-livro" class="genero-livro"></p>
-          <button id="botao-sortear-novamente"
-            class="botao botao-principal" type="button">
-            SORTEAR OUTRO <span>↻</span>
-          </button>
-          <p class="nota-sorteio">
-            As sugestões são sorteadas entre os livros do seu perfil.
-          </p>
-        </div>
-      </article>
+    </main>
 
-    </section>
-
-    <footer class="rodape">
-      <p>
-        Feito com <span>♥</span> para quem encontra um pedacinho
-        de si em cada história.
-      </p>
+    <footer>
+        <p>Destino Literário - feito para quem ama ler ♡</p>
     </footer>
 
-  </main>
-
-  <script src="main.js"></script>
 </body>
 </html>
-
