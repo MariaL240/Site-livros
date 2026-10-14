@@ -1,364 +1,269 @@
 
-const livrosPorPerfil = {
-  1: [
-    {
-      titulo: "Livro 1",
-      autor: "Confira a edição da capa",
-      genero: "Romance",
-      imagem: "images/Book 1.jpg"
-    },
-    {
-      titulo: "Livro 2",
-      autor: "Confira a edição da capa",
-      genero: "Romance",
-      imagem: "images/Book 2.jpg"
-    },
-    {
-      titulo: "Livro 3",
-      autor: "Confira a edição da capa",
-      genero: "Romance",
-      imagem: "images/Book 3.jpg"
-    }
-  ],
+const quizArea = document.getElementById("quiz-area");
+const bookArea = document.getElementById("book-area");
 
-  2: [
-    {
-      titulo: "Livro 4",
-      autor: "Confira a edição da capa",
-      genero: "Fantasia e aventura",
-      imagem: "images/Book 4.jpg"
-    },
-    {
-      titulo: "Livro 5",
-      autor: "Confira a edição da capa",
-      genero: "Fantasia e aventura",
-      imagem: "images/Book 5.jpg"
-    },
-    {
-      titulo: "Livro 6",
-      autor: "Confira a edição da capa",
-      genero: "Fantasia e aventura",
-      imagem: "images/Book 6.jpg"
-    }
-  ],
-
-  3: [
-    {
-      titulo: "Livro 7",
-      autor: "Confira a edição da capa",
-      genero: "Suspense e mistério",
-      imagem: "images/Book 7.jpg"
-    },
-    {
-      titulo: "Livro 8",
-      autor: "Confira a edição da capa",
-      genero: "Suspense e mistério",
-      imagem: "images/Book 8.jpg"
-    },
-    {
-      titulo: "Livro 1",
-      autor: "Confira a edição da capa",
-      genero: "Suspense e mistério",
-      imagem: "images/Book 1.jpg"
-    }
-  ]
-};
-
-const perfis = {
-  1: {
-    nome: "Romântico",
-    descricao:
-      "Você ama histórias que mexem com o coração: relações marcantes, sentimentos intensos e personagens que ficam na memória.",
-    dica:
-      "Seu caminho literário passa por romances, dramas e histórias emocionantes."
-  },
-
-  2: {
-    nome: "Aventureiro",
-    descricao:
-      "Você gosta de fugir da realidade e explorar universos novos, descobrir segredos e acompanhar jornadas cheias de surpresas.",
-    dica:
-      "Fantasia, aventura e mundos imaginários podem ser sua próxima paixão."
-  },
-
-  3: {
-    nome: "Detetive de emoções",
-    descricao:
-      "Você adora pistas, mistérios e reviravoltas. Uma história previsível não prende sua atenção por muito tempo.",
-    dica:
-      "Suspenses, thrillers e mistérios combinam com seu jeito curioso."
-  }
-};
+let perguntaAtual = 0;
+let respostas = [];
+let perfilAtual = "";
 
 const perguntas = [
-  {
-    texto: "Que tipo de história chama mais sua atenção?",
-    opcoes: [
-      { texto: "Um romance cheio de sentimentos", perfil: 1 },
-      { texto: "Uma aventura em um mundo diferente", perfil: 2 },
-      { texto: "Um mistério cheio de pistas", perfil: 3 }
-    ]
-  },
-
-  {
-    texto: "Qual cenário você escolheria para ler?",
-    opcoes: [
-      { texto: "Uma cidade com encontros inesperados", perfil: 1 },
-      { texto: "Um reino mágico ou lugar desconhecido", perfil: 2 },
-      { texto: "Uma casa antiga cheia de segredos", perfil: 3 }
-    ]
-  },
-
-  {
-    texto: "Que tipo de personagem mais te conquista?",
-    opcoes: [
-      { texto: "Alguém intenso que acredita no amor", perfil: 1 },
-      { texto: "Alguém corajoso que enfrenta desafios", perfil: 2 },
-      { texto: "Alguém esperto que desvenda enigmas", perfil: 3 }
-    ]
-  },
-
-  {
-    texto: "O que você mais quer sentir ao ler?",
-    opcoes: [
-      { texto: "Borboletas na barriga e emoção", perfil: 1 },
-      { texto: "A sensação de estar em uma grande jornada", perfil: 2 },
-      { texto: "Curiosidade para descobrir a verdade", perfil: 3 }
-    ]
-  },
-
-  {
-    texto: "Escolha uma frase para sua próxima leitura:",
-    opcoes: [
-      { texto: "Alguns encontros mudam tudo.", perfil: 1 },
-      { texto: "A aventura começa além do desconhecido.", perfil: 2 },
-      { texto: "Nem tudo é o que parece.", perfil: 3 }
-    ]
-  }
+    {
+        texto: "Qual tipo de história você prefere?",
+        opcoes: [
+            ["Um romance cheio de emoções", "romantico"],
+            ["Uma aventura em um mundo mágico", "aventureiro"],
+            ["Um mistério cheio de segredos", "detetive"]
+        ]
+    },
+    {
+        texto: "Onde você gostaria de ler?",
+        opcoes: [
+            ["Em um café aconchegante", "romantico"],
+            ["Em um castelo ou floresta", "aventureiro"],
+            ["Em uma casa cheia de mistérios", "detetive"]
+        ]
+    },
+    {
+        texto: "O que mais prende sua atenção?",
+        opcoes: [
+            ["Um casal tentando ficar junto", "romantico"],
+            ["Uma grande aventura", "aventureiro"],
+            ["Descobrir quem está mentindo", "detetive"]
+        ]
+    },
+    {
+        texto: "Escolha uma frase:",
+        opcoes: [
+            ["O amor aparece quando menos esperamos.", "romantico"],
+            ["A aventura começa fora do caminho.", "aventureiro"],
+            ["Todo segredo deixa alguma pista.", "detetive"]
+        ]
+    },
+    {
+        texto: "Como você gosta de terminar um livro?",
+        opcoes: [
+            ["Com o coração quentinho", "romantico"],
+            ["Com vontade de viver outra aventura", "aventureiro"],
+            ["Surpreso com o final", "detetive"]
+        ]
+    }
 ];
 
-// ELEMENTOS DO HTML
-const botaoIniciar = document.querySelector("#botao-iniciar");
-const inicioQuestionario = document.querySelector("#inicio-questionario");
-const formulario = document.querySelector("#form-questionario");
-const perguntaTexto = document.querySelector("#pergunta-texto");
-const opcoesResposta = document.querySelector("#opcoes-resposta");
-const progressoTexto = document.querySelector("#progresso-texto");
-const progressoBarra = document.querySelector("#progresso-barra");
-const avisoResposta = document.querySelector("#aviso-resposta");
-const botaoVoltar = document.querySelector("#botao-voltar");
-const botaoProximo = document.querySelector("#botao-proximo");
-const resultadoPerfil = document.querySelector("#resultado-perfil");
-const nomePerfil = document.querySelector("#nome-perfil");
-const descricaoPerfil = document.querySelector("#descricao-perfil");
-const dicaPerfil = document.querySelector("#dica-perfil");
-const botaoRefazer = document.querySelector("#botao-refazer");
+const perfis = {
+    romantico: {
+        nome: "Romântico de carteirinha",
+        descricao: "Você gosta de romances, sentimentos intensos e histórias que ficam na memória.",
+        motivo: "Suas respostas mostram que você prefere acompanhar sentimentos, relacionamentos e as emoções dos personagens.",
+        livros: [
+            ["Book 1", "Book 1.jpg"],
+            ["Book 2", "Book 2.jpg"],
+            ["Book 3", "Book 3.jpg"]
+        ]
+    },
 
-const botaoSortear = document.querySelector("#botao-sortear");
-const estadoSorteio = document.querySelector("#estado-sorteio");
-const resultadoLivro = document.querySelector("#resultado-livro");
-const capaLivro = document.querySelector("#capa-livro");
-const tituloLivro = document.querySelector("#titulo-livro");
-const autorLivro = document.querySelector("#autor-livro");
-const generoLivro = document.querySelector("#genero-livro");
-const botaoSortearNovamente =
-  document.querySelector("#botao-sortear-novamente");
+    aventureiro: {
+        nome: "Aventureiro de mundos",
+        descricao: "Você gosta de aventuras, fantasia e histórias que levam para outros universos.",
+        motivo: "Suas respostas mostram que você gosta de descobertas, desafios e histórias cheias de imaginação.",
+        livros: [
+            ["Book 4", "Book 4.jpg"],
+            ["Book 5", "Book 5.jpg"],
+            ["Book 6", "Book 6.jpg"]
+        ]
+    },
 
-// ESTADO DO QUESTIONÁRIO
-let perguntaAtual = 0;
-let respostas = Array(perguntas.length).fill(null);
-let perfilAtual = null;
-let ultimoLivroSorteado = null;
+    detetive: {
+        nome: "Detetive de emoções",
+        descricao: "Você gosta de mistérios, segredos e finais inesperados.",
+        motivo: "Suas respostas mostram que você gosta de investigar pistas, criar teorias e tentar descobrir o final.",
+        livros: [
+            ["Book 7", "Book 7.jpg"],
+            ["Book 8", "Book 8.jpg"],
+            ["Book 1", "Book 1.jpg"]
+        ]
+    }
+};
 
-// EVENTOS DOS BOTÕES
-botaoIniciar.addEventListener("click", iniciarQuestionario);
-botaoVoltar.addEventListener("click", voltarPergunta);
-botaoProximo.addEventListener("click", avancarPergunta);
-botaoRefazer.addEventListener("click", reiniciarQuestionario);
-botaoSortear.addEventListener("click", sortearLivro);
-botaoSortearNovamente.addEventListener("click", sortearLivro);
+document.getElementById("start-quiz").addEventListener("click", iniciarQuiz);
 
-// COMEÇAR QUESTIONÁRIO
-function iniciarQuestionario() {
-  inicioQuestionario.hidden = true;
-  resultadoPerfil.hidden = true;
-  formulario.hidden = false;
+function iniciarQuiz() {
+    perguntaAtual = 0;
+    respostas = [];
+    perfilAtual = "";
 
-  perguntaAtual = 0;
-  respostas = Array(perguntas.length).fill(null);
+    mostrarPergunta();
 
-  mostrarPergunta();
+    bookArea.innerHTML = `
+        <div class="livro-vazio">
+            <span>📚</span>
+            <p>Termine o quiz para sortear seu book!</p>
+        </div>
+        <button id="draw-book" disabled>Sortear meu book</button>
+    `;
 }
 
-// MOSTRAR PERGUNTA ATUAL
 function mostrarPergunta() {
-  const pergunta = perguntas[perguntaAtual];
+    const pergunta = perguntas[perguntaAtual];
 
-  perguntaTexto.textContent = pergunta.texto;
+    quizArea.innerHTML = `
+        <p>Pergunta ${perguntaAtual + 1} de ${perguntas.length}</p>
 
-  progressoTexto.textContent =
-    `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
+        <div class="progresso">
+            <div style="width: ${(perguntaAtual + 1) / perguntas.length * 100}%"></div>
+        </div>
 
-  progressoBarra.style.width =
-    `${((perguntaAtual + 1) / perguntas.length) * 100}%`;
+        <h3>${pergunta.texto}</h3>
 
-  avisoResposta.textContent = "";
-  botaoVoltar.hidden = perguntaAtual === 0;
+        <div id="opcoes"></div>
 
-  botaoProximo.textContent =
-    perguntaAtual === perguntas.length - 1
-      ? "Ver meu perfil →"
-      : "Próxima →";
+        <button id="voltar" ${perguntaAtual === 0 ? "disabled" : ""}>
+            Voltar
+        </button>
 
-  opcoesResposta.replaceChildren();
+        <button id="proxima" disabled>
+            ${perguntaAtual === perguntas.length - 1 ? "Ver resultado" : "Próxima"}
+        </button>
+    `;
 
-  pergunta.opcoes.forEach((opcao, indice) => {
-    const label = document.createElement("label");
-    label.className = "opcao-resposta";
+    const opcoes = document.getElementById("opcoes");
 
-    const input = document.createElement("input");
-    input.type = "radio";
-    input.name = "resposta";
-    input.value = String(indice);
-    input.checked = respostas[perguntaAtual] === indice;
+    pergunta.opcoes.forEach((opcao, indice) => {
+        const botao = document.createElement("button");
+        botao.className = "opcao";
+        botao.textContent = opcao[0];
 
-    const texto = document.createElement("span");
-    texto.textContent = opcao.texto;
+        if (respostas[perguntaAtual] === indice) {
+            botao.classList.add("selecionada");
+        }
 
-    label.append(input, texto);
-    opcoesResposta.append(label);
-  });
+        botao.addEventListener("click", function() {
+            respostas[perguntaAtual] = indice;
+
+            document.querySelectorAll(".opcao").forEach(function(item) {
+                item.classList.remove("selecionada");
+            });
+
+            botao.classList.add("selecionada");
+            document.getElementById("proxima").disabled = false;
+        });
+
+        opcoes.appendChild(botao);
+    });
+
+    if (respostas[perguntaAtual] !== undefined) {
+        document.getElementById("proxima").disabled = false;
+    }
+
+    document.getElementById("voltar").addEventListener("click", function() {
+        if (perguntaAtual > 0) {
+            perguntaAtual--;
+            mostrarPergunta();
+        }
+    });
+
+    document.getElementById("proxima").addEventListener("click", function() {
+        if (respostas[perguntaAtual] === undefined) return;
+
+        if (perguntaAtual < perguntas.length - 1) {
+            perguntaAtual++;
+            mostrarPergunta();
+        } else {
+            mostrarResultado();
+        }
+    });
 }
 
-// AVANÇAR NO QUESTIONÁRIO
-function avancarPergunta() {
-  const selecionada = formulario.querySelector(
-    'input[name="resposta"]:checked'
-  );
+function mostrarResultado() {
+    let pontos = {
+        romantico: 0,
+        aventureiro: 0,
+        detetive: 0
+    };
 
-  if (!selecionada) {
-    avisoResposta.textContent =
-      "Escolha uma alternativa para continuar.";
-    return;
-  }
+    respostas.forEach(function(resposta, indice) {
+        const perfil = perguntas[indice].opcoes[resposta][1];
+        pontos[perfil]++;
+    });
 
-  respostas[perguntaAtual] = Number(selecionada.value);
+    let maiorPontuacao = Math.max(
+        pontos.romantico,
+        pontos.aventureiro,
+        pontos.detetive
+    );
 
-  if (perguntaAtual < perguntas.length - 1) {
-    perguntaAtual++;
-    mostrarPergunta();
-    return;
-  }
+    let empatados = Object.keys(pontos).filter(function(perfil) {
+        return pontos[perfil] === maiorPontuacao;
+    });
 
-  calcularPerfil();
+    perfilAtual = empatados[Math.floor(Math.random() * empatados.length)];
+
+    const perfil = perfis[perfilAtual];
+
+    let minhasRespostas = respostas.map(function(resposta, indice) {
+        return perguntas[indice].opcoes[resposta][0];
+    });
+
+    quizArea.innerHTML = `
+        <p>SEU PERFIL LITERÁRIO</p>
+        <h2>${perfil.nome}</h2>
+        <p>${perfil.descricao}</p>
+
+        <div class="explicacao">
+            <h3>Por que esse é seu perfil?</h3>
+            <p>${perfil.motivo}</p>
+            <p><strong>Suas respostas:</strong></p>
+            <ul>
+                ${minhasRespostas.map(function(resposta) {
+                    return `<li>${resposta}</li>`;
+                }).join("")}
+            </ul>
+        </div>
+
+        <button id="ir-sorteio">Sortear meu book ♡</button>
+        <button id="refazer">Refazer quiz</button>
+    `;
+
+    bookArea.innerHTML = `
+        <div class="livro-vazio">
+            <span>✨</span>
+            <p>Agora você pode descobrir seu próximo book!</p>
+        </div>
+        <button id="draw-book">Sortear meu book</button>
+    `;
+
+    document.getElementById("draw-book").addEventListener("click", sortearLivro);
+
+    document.getElementById("ir-sorteio").addEventListener("click", function() {
+        sortearLivro();
+        document.querySelector(".card:last-child").scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+
+    document.getElementById("refazer").addEventListener("click", iniciarQuiz);
 }
 
-// VOLTAR UMA PERGUNTA
-function voltarPergunta() {
-  if (perguntaAtual > 0) {
-    perguntaAtual--;
-    mostrarPergunta();
-  }
-}
-
-// CALCULAR PERFIL PELAS RESPOSTAS
-function calcularPerfil() {
-  const pontos = {
-    1: 0,
-    2: 0,
-    3: 0
-  };
-
-  respostas.forEach((indiceResposta, indicePergunta) => {
-    const perfilEscolhido =
-      perguntas[indicePergunta].opcoes[indiceResposta].perfil;
-
-    pontos[perfilEscolhido]++;
-  });
-
-  const maiorPontuacao = Math.max(...Object.values(pontos));
-
-  const empatados = Object.keys(pontos)
-    .filter((perfil) => pontos[perfil] === maiorPontuacao)
-    .map(Number);
-
-  // Se houver empate, escolhe aleatoriamente entre os empatados.
-  perfilAtual =
-    empatados[Math.floor(Math.random() * empatados.length)];
-
-  mostrarPerfil();
-}
-
-// MOSTRAR RESULTADO DO PERFIL
-function mostrarPerfil() {
-  const perfil = perfis[perfilAtual];
-
-  formulario.hidden = true;
-  resultadoPerfil.hidden = false;
-
-  nomePerfil.textContent =
-    `Perfil ${perfilAtual} — ${perfil.nome}`;
-
-  descricaoPerfil.textContent = perfil.descricao;
-  dicaPerfil.textContent = perfil.dica;
-
-  botaoSortear.disabled = false;
-  estadoSorteio.hidden = false;
-  resultadoLivro.hidden = true;
-}
-
-// REFAZER QUESTIONÁRIO
-function reiniciarQuestionario() {
-  perfilAtual = null;
-
-  formulario.hidden = true;
-  resultadoPerfil.hidden = true;
-  inicioQuestionario.hidden = false;
-
-  estadoSorteio.hidden = false;
-  resultadoLivro.hidden = true;
-  botaoSortear.disabled = true;
-
-  perguntaAtual = 0;
-  respostas = Array(perguntas.length).fill(null);
-}
-
-// SORTEAR UM LIVRO DO PERFIL
 function sortearLivro() {
-  if (!perfilAtual) {
-    return;
-  }
+    if (perfilAtual === "") return;
 
-  const livros = livrosPorPerfil[perfilAtual];
+    const livros = perfis[perfilAtual].livros;
+    const livro = livros[Math.floor(Math.random() * livros.length)];
 
-  // Tenta não repetir o mesmo livro em sorteios consecutivos.
-  let opcoes = livros.filter(
-    (livro) => livro.titulo !== ultimoLivroSorteado
-  );
+    bookArea.innerHTML = `
+        <h3>Seu book sorteado!</h3>
 
-  if (opcoes.length === 0) {
-    opcoes = livros;
-  }
+        <img
+            class="capa"
+            src="images/${livro[1]}"
+            alt="Capa do ${livro[0]}"
+            onerror="this.onerror=null; this.src='${livro[1]}'"
+        >
 
-  const livro =
-    opcoes[Math.floor(Math.random() * opcoes.length)];
+        <h3>${livro[0]}</h3>
+        <p>Perfil: ${perfis[perfilAtual].nome}</p>
 
-  ultimoLivroSorteado = livro.titulo;
+        <button id="sortear-novamente">Sortear outro</button>
+    `;
 
-  tituloLivro.textContent = livro.titulo;
-  autorLivro.textContent = livro.autor;
-  generoLivro.textContent = livro.genero;
-
-  capaLivro.src = livro.imagem;
-  capaLivro.alt = `Capa de ${livro.titulo}`;
-
-  // Se as imagens estiverem na mesma pasta dos códigos,
-  // tenta também localizar o arquivo sem a pasta "images".
-  capaLivro.onerror = () => {
-    capaLivro.onerror = null;
-    capaLivro.src = livro.imagem.replace("images/", "");
-  };
-
-  estadoSorteio.hidden = true;
-  resultadoLivro.hidden = false;
+    document.getElementById("sortear-novamente").addEventListener("click", sortearLivro);
 }
