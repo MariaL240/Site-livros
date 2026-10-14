@@ -1,13 +1,13 @@
 
 body {
     margin: 0;
-    background-color: #fff4f8;
-    color: #563647;
+    background-color: #ffe9ef;
+    color: #222222;
     font-family: Arial, sans-serif;
 }
 
 .intro {
-    background-color: #f5d5e2;
+    background-color: #f65b9d;
     text-align: center;
     padding: 25px;
 }
@@ -15,6 +15,15 @@ body {
 .intro h1 {
     margin: 5px;
     font-size: 32px;
+    color: #222222;
+}
+
+.intro h1 span {
+    color: white;
+}
+
+.intro p {
+    margin-top: 10px;
 }
 
 .container {
@@ -27,12 +36,16 @@ body {
 }
 
 .card {
-    background-color: white;
-    border: 1px solid #edcbd9;
+    background-color: #fffafa;
+    border: 1px solid #f2bfd1;
     border-radius: 15px;
     padding: 25px;
     text-align: center;
     width: 50%;
+}
+
+.card h2 {
+    color: #222222;
 }
 
 .card p {
@@ -40,7 +53,7 @@ body {
 }
 
 button {
-    background-color: #b34e7e;
+    background-color: #f65b9d;
     color: white;
     border: none;
     border-radius: 8px;
@@ -51,45 +64,45 @@ button {
 }
 
 button:hover {
-    background-color: #963b67;
+    background-color: #e84d8d;
 }
 
 button:disabled {
-    background-color: #d9b8c7;
+    background-color: #e8b5ca;
     cursor: not-allowed;
 }
 
 .opcao {
     display: block;
     width: 100%;
-    background-color: #fff8fb;
-    color: #563647;
-    border: 1px solid #e8cbd8;
+    background-color: #fffafa;
+    color: #222222;
+    border: 1px solid #f2bfd1;
     text-align: left;
     margin: 10px 0;
 }
 
 .opcao.selecionada {
-    background-color: #f5d5e2;
-    border: 2px solid #b34e7e;
+    background-color: #ffe0eb;
+    border: 2px solid #f65b9d;
 }
 
 .progresso {
-    background-color: #f1dce6;
+    background-color: #ffe0eb;
     height: 8px;
     border-radius: 10px;
     margin: 15px 0;
 }
 
 .progresso div {
-    background-color: #b34e7e;
+    background-color: #f65b9d;
     height: 8px;
     border-radius: 10px;
 }
 
 .explicacao {
-    background-color: #fff4f8;
-    border: 1px solid #edcbd9;
+    background-color: #fff0f5;
+    border: 1px solid #f2bfd1;
     border-radius: 10px;
     padding: 15px;
     margin: 15px 0;
@@ -97,8 +110,8 @@ button:disabled {
 }
 
 .livro-vazio {
-    background-color: #fff8fb;
-    border: 1px dashed #dca9bf;
+    background-color: #fffafa;
+    border: 1px dashed #f2bfd1;
     border-radius: 12px;
     padding: 25px 10px;
     margin: 20px 0;
@@ -117,7 +130,8 @@ button:disabled {
 }
 
 footer {
-    background-color: #f5d5e2;
+    background-color: #f65b9d;
+    color: #222222;
     text-align: center;
     padding: 15px;
     margin-top: 30px;
