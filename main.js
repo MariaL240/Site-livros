@@ -1,4 +1,5 @@
 
+
 const quizArea = document.getElementById("quiz-area");
 const bookArea = document.getElementById("book-area");
 
@@ -55,9 +56,9 @@ const perfis = {
         descricao: "Você gosta de romances, sentimentos intensos e histórias que ficam na memória.",
         motivo: "Suas respostas mostram que você prefere acompanhar sentimentos, relacionamentos e as emoções dos personagens.",
         livros: [
-            ["Book 1", "Book 1.jpg"],
-            ["Book 2", "Book 2.jpg"],
-            ["Book 3", "Book 3.jpg"]
+            ["Divinos rivais", "book1.jpg"],
+            ["Powerless", "book2.jpg"],
+            ["Melhor do que nos filmes", "book3.jpg"]
         ]
     },
 
@@ -66,9 +67,9 @@ const perfis = {
         descricao: "Você gosta de aventuras, fantasia e histórias que levam para outros universos.",
         motivo: "Suas respostas mostram que você gosta de descobertas, desafios e histórias cheias de imaginação.",
         livros: [
-            ["Book 4", "Book 4.jpg"],
-            ["Book 5", "Book 5.jpg"],
-            ["Book 6", "Book 6.jpg"]
+            ["A rainha vermelha", "book4.jpg"],
+            ["Era uma vez um coração partido", "book5.jpg"],
+            ["Jogos de herança", "book6.jpg"]
         ]
     },
 
@@ -77,9 +78,9 @@ const perfis = {
         descricao: "Você gosta de mistérios, segredos e finais inesperados.",
         motivo: "Suas respostas mostram que você gosta de investigar pistas, criar teorias e tentar descobrir o final.",
         livros: [
-            ["Book 7", "Book 7.jpg"],
-            ["Book 8", "Book 8.jpg"],
-            ["Book 1", "Book 1.jpg"]
+            ["Manual de assassinato para boas garotas", "book7.jpg"],
+            ["O reaparecimento de Rachel Price", "book8.jpg"],
+            ["Divinos Rivais", "book1.jpg"]
         ]
     }
 };
@@ -96,9 +97,9 @@ function iniciarQuiz() {
     bookArea.innerHTML = `
         <div class="livro-vazio">
             <span>📚</span>
-            <p>Termine o quiz para sortear seu book!</p>
+            <p>Termine o quiz para sortear seu livro!</p>
         </div>
-        <button id="draw-book" disabled>Sortear meu book</button>
+        <button id="draw-book" disabled>Sortear meu livro</button>
     `;
 }
 
@@ -219,16 +220,16 @@ function mostrarResultado() {
             </ul>
         </div>
 
-        <button id="ir-sorteio">Sortear meu book ♡</button>
+        <button id="ir-sorteio">Sortear meu livro ♡</button>
         <button id="refazer">Refazer quiz</button>
     `;
 
     bookArea.innerHTML = `
         <div class="livro-vazio">
             <span>✨</span>
-            <p>Agora você pode descobrir seu próximo book!</p>
+            <p>Agora você pode descobrir seu próximo livro!</p>
         </div>
-        <button id="draw-book">Sortear meu book</button>
+        <button id="draw-book">Sortear meu livro</button>
     `;
 
     document.getElementById("draw-book").addEventListener("click", sortearLivro);
@@ -250,7 +251,7 @@ function sortearLivro() {
     const livro = livros[Math.floor(Math.random() * livros.length)];
 
     bookArea.innerHTML = `
-        <h3>Seu book sorteado!</h3>
+        <h3>Seu livro sorteado!</h3>
 
         <img
             class="capa"
