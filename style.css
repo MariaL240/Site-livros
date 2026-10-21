@@ -1,43 +1,26 @@
 ```css
-/* CONFIGURAÇÃO GERAL */
-* {
-    box-sizing: border-box;
-}
-
-html {
-    width: 100%;
-    min-height: 100%;
-}
-
 body {
     margin: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100svh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     background-color: #ffe9ef;
     color: #222222;
     font-family: Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
 }
 
-/* CABEÇALHO */
 .intro {
-    flex: 0 0 auto;
     background-color: #f65b9d;
     text-align: center;
-    padding: 18px 15px;
+    padding: 25px;
 }
 
 .intro h1 {
-    margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
+    margin: 5px;
     font-size: 32px;
-    font-weight: normal;
     color: #222222;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
 }
 
 .intro h1 span {
@@ -45,76 +28,52 @@ body {
 }
 
 .intro p {
-    margin: 7px 0 0;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
+    margin-top: 10px;
 }
 
-/* ÁREA DOS CARDS */
 .container {
     width: 90%;
     max-width: 1100px;
-    flex: 1 1 0;
-    min-height: 0;
-    margin: 0 auto;
-    padding: 22px 0;
+    margin: 30px auto;
     display: flex;
-    align-items: stretch;
     gap: 20px;
+    align-items: stretch;
+    flex: 1 0 auto;
 }
 
-/* CARDS */
 .card {
-    flex: 1 1 0;
-    min-width: 0;
-    min-height: 0;
-    padding: 22px;
-    overflow-y: auto;
-    text-align: center;
     background-color: #fffafa;
     border: 1px solid #f2bfd1;
     border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    width: 50%;
 }
 
-.card h2 {
-    margin: 0 0 12px;
-    color: #593746;
+.card h2,
+.card h3,
+.explicacao h3 {
+    color: #222222;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 24px;
     font-weight: normal;
-    line-height: 1.35;
-}
-
-.card h3 {
-    color: #593746;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 19px;
-    font-weight: normal;
-    line-height: 1.4;
 }
 
 .card p {
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
-/* BOTÕES */
 button {
-    max-width: 100%;
-    margin: 5px;
-    padding: 11px 16px;
-    border: none;
-    border-radius: 8px;
     background-color: #f65b9d;
     color: white;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 5px;
+    font-size: 15px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
-button:hover:not(:disabled) {
+button:hover {
     background-color: #e84d8d;
 }
 
@@ -123,27 +82,14 @@ button:disabled {
     cursor: not-allowed;
 }
 
-button:focus-visible {
-    outline: 2px solid #a92b65;
-    outline-offset: 3px;
-}
-
-/* OPÇÕES DO QUIZ */
 .opcao {
     display: block;
     width: 100%;
-    margin: 9px 0;
-    padding: 11px 13px;
     background-color: #fffafa;
     color: #222222;
     border: 1px solid #f2bfd1;
     text-align: left;
-    white-space: normal;
-}
-
-.opcao:hover:not(:disabled) {
-    background-color: #ffe0eb;
-    color: #222222;
+    margin: 10px 0;
 }
 
 .opcao.selecionada {
@@ -151,279 +97,64 @@ button:focus-visible {
     border: 2px solid #f65b9d;
 }
 
-/* BARRA DE PROGRESSO */
 .progresso {
-    height: 7px;
-    margin: 12px 0;
-    overflow: hidden;
-    border-radius: 10px;
     background-color: #ffe0eb;
+    height: 8px;
+    border-radius: 10px;
+    margin: 15px 0;
 }
 
 .progresso div {
-    height: 100%;
-    border-radius: 10px;
     background-color: #f65b9d;
-    transition: width 0.3s ease;
+    height: 8px;
+    border-radius: 10px;
 }
 
-/* EXPLICAÇÃO DO PERFIL */
 .explicacao {
-    margin: 12px 0;
-    padding: 13px;
+    background-color: #fff0f5;
     border: 1px solid #f2bfd1;
     border-radius: 10px;
-    background-color: #fff0f5;
+    padding: 15px;
+    margin: 15px 0;
     text-align: left;
-    overflow-wrap: anywhere;
 }
 
-.explicacao h3 {
-    margin-top: 0;
-    font-size: 18px;
-}
-
-.explicacao ul {
-    padding-left: 22px;
-}
-
-.explicacao li {
-    margin-bottom: 5px;
-    padding-left: 2px;
-}
-
-/* ÁREA DO LIVRO */
 .livro-vazio {
-    margin: 16px 0;
-    padding: 20px 10px;
+    background-color: #fffafa;
     border: 1px dashed #f2bfd1;
     border-radius: 12px;
-    background-color: #fffafa;
+    padding: 25px 10px;
+    margin: 20px 0;
 }
 
 .livro-vazio span {
-    font-size: 34px;
+    font-size: 40px;
 }
 
-/* CAPAS MENORES */
 .capa {
-    display: block;
-    width: 145px;
+    width: 210px;
     max-width: 100%;
-    height: 205px;
-    margin: 12px auto;
+    height: 280px;
     object-fit: contain;
+    margin-top: 20px;
 }
 
-.card #book-area h3 {
-    margin: 10px 0;
-    font-size: 19px;
-}
-
-/* RODAPÉ */
 footer {
-    flex: 0 0 60px;
-    width: 100%;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 10px 15px;
     background-color: #f65b9d;
     color: #222222;
     text-align: center;
-}
-
-footer p {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-/* TELAS MENORES */
-@media (max-width: 700px) {
-    body {
-        height: auto;
-        min-height: 100vh;
-        min-height: 100svh;
-        overflow: auto;
-    }
-
-    .intro {
-        padding: 18px 12px;
-    }
-
-    .intro h1 {
-        font-size: 28px;
-    }
-
-    .intro p {
-        font-size: 14px;
-    }
-
-    .container {
-        width: 92%;
-        flex: 1 0 auto;
-        min-height: auto;
-        flex-direction: column;
-        gap: 16px;
-        padding: 18px 0;
-    }
-
-    .card {
-        flex: 0 0 auto;
-        width: 100%;
-        padding: 19px 16px;
-        overflow: visible;
-    }
-
-    .card h2 {
-        font-size: 22px;
-    }
-
-    .capa {
-        width: 125px;
-        height: 175px;
-    }
-
-    footer {
-        flex-basis: 60px;
-        min-height: 60px;
-    }
-}
-
-/* ACESSIBILIDADE */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        transition: none !important;
-    }
-}
-``````css
-/* CORREÇÃO FINAL DO LAYOUT */
-html,
-body {
-    margin: 0;
-    width: 100%;
-    min-height: 100%;
-}
-
-body {
-    height: 100vh;
-    height: 100svh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-}
-
-/* CABEÇALHO COM ALTURA NATURAL */
-.intro {
+    padding: 15px;
+    margin-top: auto;
     flex-shrink: 0;
-    padding: 16px 15px;
 }
 
-.intro h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-}
-
-.intro p {
-    font-family: Arial, sans-serif;
-}
-
-/* OS CARDS OCUPAM APENAS O ESPAÇO DISPONÍVEL */
-.container {
-    width: 90%;
-    max-width: 1100px;
-    flex: 1 1 0;
-    min-height: 0;
-    margin: 0 auto;
-    padding: 18px 0;
-    gap: 20px;
-    display: flex;
-    align-items: stretch;
-}
-
-.card {
-    flex: 1 1 0;
-    min-width: 0;
-    min-height: 0;
-    padding: 20px;
-    overflow-y: auto;
-    font-family: Arial, sans-serif;
-}
-
-/* FONTE DIFERENTE SOMENTE NOS TÍTULOS E PERGUNTAS */
-.card h2,
-.card h3,
-.explicacao h3,
-#quiz-area h3,
-#book-area h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: normal;
-}
-
-/* CAPAS MENORES */
-.capa {
-    display: block;
-    width: 125px;
-    max-width: 100%;
-    height: 175px;
-    object-fit: contain;
-    margin: 10px auto;
-}
-
-/* RODAPÉ ROSA SEMPRE RESERVADO */
-footer {
-    display: flex;
-    flex: 0 0 58px;
-    width: 100%;
-    height: 58px;
-    min-height: 58px;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 8px 15px;
-    background-color: #f65b9d;
-    color: #222222;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-/* CELULAR */
 @media (max-width: 700px) {
-    body {
-        height: auto;
-        min-height: 100vh;
-        min-height: 100svh;
-        overflow: auto;
-    }
-
     .container {
-        width: 92%;
-        flex: 1 0 auto;
         flex-direction: column;
-        padding: 18px 0;
-        gap: 16px;
     }
 
     .card {
-        flex: 0 0 auto;
-        overflow: visible;
-    }
-
-    footer {
-        flex: 0 0 58px;
+        width: auto;
     }
 }
 ```
